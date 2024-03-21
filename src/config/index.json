@@ -5,39 +5,35 @@
   },
   "navigation": [
     {
-      "name": "Product",
+      "name": "O nas",
       "href": "product"
     },
     {
-      "name": "Features",
+      "name": "Oferta",
       "href": "features"
     },
 
     {
-      "name": "Pricing",
+      "name": "Galeria",
       "href": "pricing"
     },
     {
-      "name": "About",
+      "name": "Kontakt",
       "href": "about"
     }
   ],
-  "callToAction": {
-    "text": "Get started",
-    "href": "#"
-  },
   "mainHero": {
-    "title": "Use me as your",
-    "subtitle": "landing page.",
-    "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
-    "img": "/assets/images/happyTeam.jpeg",
+    "title": "STADNINA KONI",
+    "subtitle": "ZŁOTA PODKOWA",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+    "img": "/assets/images/artemida.jpeg",
     "primaryAction": {
-      "text": "Get started",
+      "text": "Sprawdź ofertę",
       "href": "#"
     },
     "secondaryAction": {
-      "text": "Email us",
-      "href": "mailto:issaafakattan@gmail.com?subject=I like react landing page!"
+      "text": "Zadzwoń",
+      "phoneNumber": "+48 513097988"
     }
   },
   "product": {

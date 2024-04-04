@@ -5,7 +5,6 @@ import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import MobileStepper from '@mui/material/MobileStepper';
-import Paper from '@mui/material/Paper';
 import { useTheme } from '@mui/material/styles';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
@@ -58,17 +57,6 @@ function SwipeableTextMobileStepper() {
       className="mx-auto container xl:px-20 lg:px-12 sm:px-6 px-4 py-12"
     >
       <Box sx={{ maxWidth: 400, flexGrow: 1 }}>
-        <Paper
-          square
-          elevation={0}
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            height: 50,
-            pl: 2,
-            bgcolor: 'background.default',
-          }}
-        ></Paper>
         <AutoPlaySwipeableViews
           axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
           index={activeStep}

@@ -1,12 +1,14 @@
-import React from 'react';
+// import React from 'react';
 
 import config from '../config/index.json';
 
 const Offer = () => {
+  // const [isHovered, setIsHovered] = useState(false);
+
   const { offer } = config;
   const { items: OfferList } = offer;
   return (
-    <div className={`py-12 bg-background`} id="offert">
+    <div className={`py-12 bg-background`} id="offer">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:text-center">
           <h1

@@ -2,12 +2,12 @@ import React from 'react';
 
 import About from '../components/About';
 import Canvas from '../components/Canvas';
-import Features from '../components/Features';
+import Contact from '../components/Contact';
 import Header from '../components/Header';
 import LazyShow from '../components/LazyShow';
 import MainHero from '../components/MainHero';
 import MainHeroImage from '../components/MainHeroImage';
-import Product from '../components/Product';
+import Offer from '../components/Offer';
 import Pricing from '../components/Slider';
 
 const App = () => {
@@ -27,13 +27,13 @@ const App = () => {
       <Canvas />
       <LazyShow>
         <>
-          <Product />
+          <About />
           <Canvas />
         </>
       </LazyShow>
       <LazyShow>
         <>
-          <Features />
+          <Offer />
           <Canvas />
         </>
       </LazyShow>
@@ -43,7 +43,7 @@ const App = () => {
       <LazyShow>
         <>
           <Canvas />
-          <About />
+          <Contact />
         </>
       </LazyShow>
     </div>

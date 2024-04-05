@@ -27,14 +27,8 @@ const Features = () => {
             {featuresList.map((feature) => (
               <div key={feature.name} className="relative">
                 <dt>
-                  <div
-                    className={`absolute flex items-center justify-center h-15 w-20 rounded-md bg-background text-tertiary`}
-                  >
-                    <img
-                      className={`inline-block h-20 w-20 object-contain`}
-                      src={feature.icon}
-                      alt={feature.name}
-                    />
+                  <div>
+                    <img src={feature.image} alt={feature.name} />
                   </div>
                   <p className="ml-16 text-lg leading-6 font-medium text-gray-900">
                     {feature.name}

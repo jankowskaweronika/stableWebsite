@@ -58,23 +58,23 @@
     "items": [
       {
         "name": "Lekcje jazdy konnej",
-        "description": "...",
-        "icon": "/assets/images/zawody.jpeg"
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "image": "/assets/images/zawody.jpeg"
       },
       {
         "name": "Warsztaty jeździeckie",
-        "description": "...",
-        "icon": "/assets/images/tailwindcss.svg"
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "image": "/assets/images/euforia.jpeg"
       },
       {
         "name": "Weekend w siodle",
-        "description": "...",
-        "icon": "/assets/images/nextjs.svg"
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "image": "/assets/images/artemida.jpeg"
       },
       {
         "name": "Wyjazdy w teren",
-        "description": "...",
-        "icon": "/assets/images/ts.png"
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "image": "/assets/images/zawody.jpeg"
       }
     ]
   },

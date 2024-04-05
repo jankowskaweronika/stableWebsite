@@ -9,6 +9,10 @@ import { useTheme } from '@mui/material/styles';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 
+import config from '../config/index.json';
+
+const { pricing } = config;
+
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const images = [
@@ -60,8 +64,21 @@ function SwipeableTextMobileStepper() {
         sx={{
           maxWidth: 400,
           flexGrow: 1,
+          justifyContent: 'center',
         }}
       >
+        <h1
+          className={`w-full my-2 text-5xl font-bold leading-tight text-center text-primary`}
+        >
+          {pricing.title.split(' ').map((word, index) => (
+            <span
+              key={index}
+              className={index % 2 ? 'text-primary' : 'text-border'}
+            >
+              {word}{' '}
+            </span>
+          ))}
+        </h1>
         <AutoPlaySwipeableViews
           axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
           index={activeStep}

@@ -4,16 +4,23 @@ import config from '../config/index.json';
 
 const Features = () => {
   const { features } = config;
-  const { title, subtitle, description, items: featuresList } = features;
+  const { subtitle, description, items: featuresList } = features;
   return (
     <div className={`py-12 bg-background`} id="features">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:text-center">
-          <h2
-            className={`text-base text-primary font-semibold tracking-wide uppercase`}
+          <h1
+            className={`w-full my-2 text-5xl font-bold leading-tight text-center text-primary`}
           >
-            {title}
-          </h2>
+            {features.title.split(' ').map((word, index) => (
+              <span
+                key={index}
+                className={index % 2 ? 'text-primary' : 'text-border'}
+              >
+                {word}{' '}
+              </span>
+            ))}
+          </h1>
           <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
             {subtitle}
           </p>

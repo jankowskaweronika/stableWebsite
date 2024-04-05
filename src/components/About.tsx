@@ -15,7 +15,27 @@ const About = () => {
       className="mx-auto container xl:px-20 lg:px-12 sm:px-6 px-4 py-12"
     >
       <div className="flex flex-col items-center justify-center">
+        <h1
+          className={`w-full my-2 text-5xl font-bold leading-tight text-center text-primary`}
+        >
+          {about.title.split(' ').map((word, index) => (
+            <span
+              key={index}
+              className={index % 2 ? 'text-primary' : 'text-border'}
+            >
+              {word}{' '}
+            </span>
+          ))}
+        </h1>
         <div className="flex items-center gap-x-8 mt-6 h-8">
+          {/* <div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2506.0801094366384!2d22.34569511191108!3d51.08852907160298!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4722f16e619fd6ff%3A0x9dbf1152ee612fc!2sStajnia%20Z%C5%82ota%20Podkowa!5e0!3m2!1spl!2spl!4v1712252138066!5m2!1spl!2spl"
+              width="600"
+              height="450"
+              loading="lazy"
+            ></iframe>
+          </div> */}
           <a
             aria-label="facebook"
             href={socialMedia.facebook}

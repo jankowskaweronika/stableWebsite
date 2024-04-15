@@ -1,55 +1,67 @@
 import React from 'react';
 
-import FacebookIcon from '@mui/icons-material/Facebook';
-import InstagramIcon from '@mui/icons-material/Instagram';
-
 import config from '../config/index.json';
+import Divider from './Divider';
 
 const About = () => {
   const { about } = config;
-  const { socialMedia } = about;
+  const [firstItem, secondItem] = about.items;
 
   return (
-    <div
-      id="about"
-      className="mx-auto container xl:px-20 lg:px-12 sm:px-6 px-4 py-12"
-    >
-      <div className="flex flex-col items-center justify-center">
-        <div className="flex items-center gap-x-8 mt-6 h-8">
-          <a
-            aria-label="facebook"
-            href={socialMedia.facebook}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FacebookIcon
-              className="fill-current text-gray-800 dark:text-white hover:text-primary"
-              style={{
-                fontSize: '35px',
-              }}
+    <section className={`bg-background py-8`} id="about">
+      <div className={`container max-w-5xl mx-auto m-8`}>
+        <h1
+          className={`w-full my-2 text-5xl font-bold leading-tight text-center text-primary`}
+        >
+          {about.title.split(' ').map((word, index) => (
+            <span
+              key={index}
+              className={index % 2 ? 'text-primary' : 'text-border'}
+            >
+              {word}{' '}
+            </span>
+          ))}
+        </h1>
+        <Divider />
+        <div className={`flex flex-wrap`}>
+          <div className={`w-5/6 sm:w-1/2 p-6 mt-20`}>
+            <h3
+              className={`text-3xl text-gray-800 font-bold leading-none mb-3`}
+            >
+              {firstItem?.title}
+            </h3>
+            <p className={`text-gray-600`}>{firstItem?.description}</p>
+          </div>
+          <div className={`w-full sm:w-1/2 p-6`}>
+            <img
+              className="h-6/6"
+              src={firstItem?.img}
+              alt={firstItem?.title}
             />
-          </a>
-          <a
-            aria-label="instagram"
-            href={socialMedia.instagram}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <InstagramIcon
-              className="fill-current text-gray-800 dark:text-white hover:text-primary"
-              style={{
-                fontSize: '35px',
-              }}
-            />
-          </a>
+          </div>
         </div>
-        <div className="flex items-center mt-6">
-          <p className="mt-6 text-xs lg:text-sm leading-none text-gray-900 dark:text-gray-50">
-            &copy; {new Date().getFullYear()} designed by Stajnia Złota Podkowa
-          </p>
+        <div className={`flex flex-wrap flex-col-reverse sm:flex-row`}>
+          <div className={`w-full sm:w-1/2 p-6`}>
+            <img
+              className="h-6/6"
+              src={secondItem?.img}
+              alt={secondItem?.title}
+            />
+          </div>
+          <div className={`w-full sm:w-1/2 p-6 mt-20`}>
+            <div className={`align-middle`}>
+              <h3
+                className={`text-3xl text-gray-800 font-bold leading-none mb-3`}
+              >
+                {secondItem?.title}
+              </h3>
+              <p className={`text-gray-600 mb-8`}>{secondItem?.description}</p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
+
 export default About;

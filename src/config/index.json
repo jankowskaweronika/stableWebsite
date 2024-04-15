@@ -6,20 +6,20 @@
   "navigation": [
     {
       "name": "O nas",
-      "href": "product"
+      "href": "about"
     },
     {
       "name": "Oferta",
-      "href": "features"
+      "href": "offer"
     },
 
     {
       "name": "Galeria",
-      "href": "pricing"
+      "href": "gallery"
     },
     {
       "name": "Kontakt",
-      "href": "about"
+      "href": "contact"
     }
   ],
   "mainHero": {
@@ -29,14 +29,14 @@
     "img": "/assets/images/artemida.jpeg",
     "primaryAction": {
       "text": "Sprawdź ofertę",
-      "href": "#features"
+      "href": "#offer"
     },
     "secondaryAction": {
       "text": "Zadzwoń",
       "phoneNumber": "+48 513097988"
     }
   },
-  "product": {
+  "about": {
     "title": "O nas",
     "items": [
       {
@@ -51,37 +51,36 @@
       }
     ]
   },
-  "features": {
+  "offer": {
     "title": "Nasza oferta",
-    "subtitle": "Zapraszamy do skorzystania z naszej oferty",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     "items": [
       {
         "name": "Lekcje jazdy konnej",
-        "description": "...",
-        "icon": "/assets/images/zawody.jpeg"
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "image": "/assets/images/zawody.jpeg"
       },
       {
         "name": "Warsztaty jeździeckie",
-        "description": "...",
-        "icon": "/assets/images/tailwindcss.svg"
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "image": "/assets/images/euforia.jpeg"
       },
       {
         "name": "Weekend w siodle",
-        "description": "...",
-        "icon": "/assets/images/nextjs.svg"
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "image": "/assets/images/artemida.jpeg"
       },
       {
         "name": "Wyjazdy w teren",
-        "description": "...",
-        "icon": "/assets/images/ts.png"
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "image": "/assets/images/zawody.jpeg"
       }
     ]
   },
   "pricing": {
-    "title": "Pricing"
+    "title": "Zdjęcia naszych koni"
   },
-  "about": {
+  "contact": {
+    "title": "Dane kontaktowe",
     "socialMedia": {
       "facebook": "https://www.facebook.com/profile.php?id=100057627093445&locale=pl_PL",
       "instagram": "https://www.instagram.com/stajnia_zlota_podkowa/"

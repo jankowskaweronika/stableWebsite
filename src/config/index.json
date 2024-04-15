@@ -6,20 +6,20 @@
   "navigation": [
     {
       "name": "O nas",
-      "href": "product"
+      "href": "about"
     },
     {
       "name": "Oferta",
-      "href": "features"
+      "href": "offer"
     },
 
     {
       "name": "Galeria",
-      "href": "pricing"
+      "href": "gallery"
     },
     {
       "name": "Kontakt",
-      "href": "about"
+      "href": "contact"
     }
   ],
   "mainHero": {
@@ -29,7 +29,7 @@
     "img": "/assets/images/artemida.jpeg",
     "primaryAction": {
       "text": "Sprawdź ofertę",
-      "href": "#features"
+      "href": "#offer"
     },
     "secondaryAction": {
       "text": "Zadzwoń",

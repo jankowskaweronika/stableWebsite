@@ -6,20 +6,20 @@
   "navigation": [
     {
       "name": "O nas",
-      "href": "product"
+      "href": "about"
     },
     {
       "name": "Oferta",
-      "href": "features"
+      "href": "offer"
     },
 
     {
       "name": "Galeria",
-      "href": "pricing"
+      "href": "gallery"
     },
     {
       "name": "Kontakt",
-      "href": "about"
+      "href": "contact"
     }
   ],
   "mainHero": {
@@ -29,14 +29,14 @@
     "img": "/assets/images/artemida.jpeg",
     "primaryAction": {
       "text": "Sprawdź ofertę",
-      "href": "#features"
+      "href": "#offer"
     },
     "secondaryAction": {
       "text": "Zadzwoń",
       "phoneNumber": "+48 513097988"
     }
   },
-  "product": {
+  "about": {
     "title": "O nas",
     "items": [
       {
@@ -51,10 +51,8 @@
       }
     ]
   },
-  "features": {
+  "offer": {
     "title": "Nasza oferta",
-    "subtitle": "Zapraszamy do skorzystania z naszej oferty",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     "items": [
       {
         "name": "Lekcje jazdy konnej",
@@ -81,7 +79,7 @@
   "pricing": {
     "title": "Zdjęcia naszych koni"
   },
-  "about": {
+  "contact": {
     "title": "Dane kontaktowe",
     "socialMedia": {
       "facebook": "https://www.facebook.com/profile.php?id=100057627093445&locale=pl_PL",

@@ -1,18 +1,20 @@
-import React from 'react';
+// import React from 'react';
 
 import config from '../config/index.json';
 
-const Features = () => {
-  const { features } = config;
-  const { subtitle, description, items: featuresList } = features;
+const Offer = () => {
+  // const [isHovered, setIsHovered] = useState(false);
+
+  const { offer } = config;
+  const { items: OfferList } = offer;
   return (
-    <div className={`py-12 bg-background`} id="features">
+    <div className={`py-12 bg-background`} id="offer">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:text-center">
           <h1
             className={`w-full my-2 text-5xl font-bold leading-tight text-center text-primary`}
           >
-            {features.title.split(' ').map((word, index) => (
+            {offer.title.split(' ').map((word, index) => (
               <span
                 key={index}
                 className={index % 2 ? 'text-primary' : 'text-border'}
@@ -21,17 +23,11 @@ const Features = () => {
               </span>
             ))}
           </h1>
-          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-            {subtitle}
-          </p>
-          <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-            {description}
-          </p>
         </div>
 
         <div className="mt-10">
           <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
-            {featuresList.map((feature) => (
+            {OfferList.map((feature) => (
               <div key={feature.name} className="relative">
                 <dt>
                   <div>
@@ -53,4 +49,4 @@ const Features = () => {
   );
 };
 
-export default Features;
+export default Offer;

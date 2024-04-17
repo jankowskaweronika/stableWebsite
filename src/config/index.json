@@ -25,7 +25,7 @@
   "mainHero": {
     "title": "STADNINA KONI",
     "subtitle": "ZŁOTA PODKOWA",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     "img": "/assets/images/artemida.jpeg",
     "primaryAction": {
       "text": "Sprawdź ofertę",
@@ -62,22 +62,48 @@
       {
         "name": "Warsztaty jeździeckie",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        "image": "/assets/images/euforia.jpeg"
+        "image": "/assets/images/pastwisko.jpeg"
       },
       {
         "name": "Weekend w siodle",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        "image": "/assets/images/artemida.jpeg"
+        "image": "/assets/images/Białka.jpeg"
       },
       {
         "name": "Wyjazdy w teren",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        "image": "/assets/images/zawody.jpeg"
+        "image": "/assets/images/teren.jpeg"
       }
     ]
   },
-  "pricing": {
-    "title": "Zdjęcia naszych koni"
+  "slider": {
+    "title": "Nasze zdjęcia",
+    "images": [
+      {
+        "label": "San",
+        "imgPath": "/assets/images/euforia.jpeg"
+      },
+      {
+        "label": "San",
+        "imgPath": "/assets/images/artemida.jpeg"
+      },
+      {
+        "label": "San",
+        "imgPath": "/assets/images/Białka.jpeg"
+      },
+      {
+        "label": "San",
+        "imgPath": "/assets/images/pastwisko.jpeg"
+      },
+      {
+        "label": "San",
+        "imgPath": "/assets/images/teren.jpeg"
+      },
+      {
+        "label": "San",
+        "imgPath": "/assets/images/zawody.jpeg"
+      }
+    ]
   },
   "contact": {
     "title": "Dane kontaktowe",

@@ -10,38 +10,16 @@ import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 
 import config from '../config/index.json';
+import Divider from './Divider';
 
-const { pricing } = config;
+const { slider } = config;
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
-
-const images = [
-  {
-    label: 'San Francisco Oakland Bay Bridge, United States',
-    imgPath:
-      'https://v.wpimg.pl/aWNhZ28uTjYvCiwBFw5DI2xSeFtRV011O0pgEBdNUWc2Rz4cTwUIOilGKl4XTFhkf1pqAQ1YUG93Wm8DC0RXbmELMltbFAY4YAIqVRoI',
-  },
-  {
-    label: 'San Francisco Oakland Bay Bridge, United States',
-    imgPath:
-      'https://v.wpimg.pl/aWNhZ28uTjYvCiwBFw5DI2xSeFtRV011O0pgEBdNUWc2Rz4cTwUIOilGKl4XTFhkf1pqAQ1YUG93Wm8DC0RXbmELMltbFAY4YAIqVRoI',
-  },
-  {
-    label: 'San Francisco Oakland Bay Bridge, United States',
-    imgPath:
-      'https://v.wpimg.pl/aWNhZ28uTjYvCiwBFw5DI2xSeFtRV011O0pgEBdNUWc2Rz4cTwUIOilGKl4XTFhkf1pqAQ1YUG93Wm8DC0RXbmELMltbFAY4YAIqVRoI',
-  },
-  {
-    label: 'San Francisco Oakland Bay Bridge, United States',
-    imgPath:
-      'https://v.wpimg.pl/aWNhZ28uTjYvCiwBFw5DI2xSeFtRV011O0pgEBdNUWc2Rz4cTwUIOilGKl4XTFhkf1pqAQ1YUG93Wm8DC0RXbmELMltbFAY4YAIqVRoI',
-  },
-];
 
 function SwipeableTextMobileStepper() {
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
-  const maxSteps = images.length;
+  const maxSteps = slider.images.length;
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -62,7 +40,7 @@ function SwipeableTextMobileStepper() {
     >
       <Box
         sx={{
-          maxWidth: 400,
+          maxWidth: 1000,
           flexGrow: 1,
           justifyContent: 'center',
         }}
@@ -70,7 +48,7 @@ function SwipeableTextMobileStepper() {
         <h1
           className={`w-full my-2 text-5xl font-bold leading-tight text-center text-primary`}
         >
-          {pricing.title.split(' ').map((word, index) => (
+          {slider.title.split(' ').map((word, index) => (
             <span
               key={index}
               className={index % 2 ? 'text-primary' : 'text-border'}
@@ -79,25 +57,25 @@ function SwipeableTextMobileStepper() {
             </span>
           ))}
         </h1>
+        <Divider />
         <AutoPlaySwipeableViews
           axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
           index={activeStep}
           onChangeIndex={handleStepChange}
           enableMouseEvents
         >
-          {images.map((step, index) => (
+          {slider.images.map((step, index) => (
             <div key={step.label}>
               {Math.abs(activeStep - index) <= 2 ? (
                 <Box
                   component="img"
                   sx={{
-                    height: 350,
-                    display: 'flex',
-                    maxWidth: 400,
+                    height: 700,
+                    display: 'block',
+                    margin: 'auto',
+                    maxWidth: 900,
                     overflow: 'hidden',
                     width: '100%',
-                    justifyContent: 'center',
-                    alignContent: 'center',
                   }}
                   src={step.imgPath}
                   alt={step.label}

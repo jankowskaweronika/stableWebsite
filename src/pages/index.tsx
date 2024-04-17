@@ -1,6 +1,6 @@
 import React from 'react';
 
-// import About from '../components/About';
+import About from '../components/About';
 import Canvas from '../components/Canvas';
 import Contact from '../components/Contact';
 import Header from '../components/Header';
@@ -25,7 +25,7 @@ const App = () => {
         <MainHeroImage />
       </div>
       <Canvas />
-      {/* <About /> */}
+      <About />
       <Canvas />
       <LazyShow>
         <>

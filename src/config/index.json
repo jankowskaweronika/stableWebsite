@@ -25,7 +25,7 @@
   "mainHero": {
     "title": "STADNINA KONI",
     "subtitle": "ZŁOTA PODKOWA",
-    "description": "Zapraszamy na niezapomniane jazdy konne, malownicze wyjazdy w teren i inspirujące warsztaty w siodle. Tworzymy miejsce, gdzie pasja do koni łączy się z naturą i profesjonalizmem. Sprawdź naszą ofertę i dołącz do nas!",
+    "description": "Zapraszamy na niezapomniane jazdy konne, malownicze wyjazdy w teren i inspirujące warsztaty w siodle. Tworzymy miejsce, gdzie pasja do koni łączy się z naturą i profesjonalizmem.",
     "img": "/assets/images/artemida.jpeg",
     "primaryAction": {
       "text": "Sprawdź ofertę",
@@ -40,14 +40,24 @@
     "title": "O nas",
     "items": [
       {
-        "title": "A plug n play template",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "title": "🐎 Pasja i profesjonalizm",
+        "description": "Nasza stajnia to miejsce, gdzie miłość do koni łączy się z doświadczeniem. Oferujemy naukę jazdy konnej, niezależnie od poziomu zaawansowania, dbając o komfort i bezpieczeństwo każdego jeźdźca.",
         "img": "/assets/images/zawody.jpeg"
       },
       {
-        "title": "Make it your own!",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        "img": "/assets/images/euforia.jpeg"
+        "title": "🌿 Blisko natury",
+        "description": "Zapraszamy na wyjątkowe wyjazdy w teren, które pozwalają poczuć wolność i harmonię z przyrodą. Nasze malownicze trasy sprawią, że każda chwila w siodle będzie niezapomnianym przeżyciem.",
+        "img": "/assets/images/teren.jpeg"
+      },
+      {
+        "title": "🐴 Profesjonalna hodowla i sukcesy sportowe",
+        "description": "Z pasją zajmujemy się hodowlą koni, dbając o ich zdrowie, kondycję i odpowiednie przygotowanie do sportu i rekreacji. Nasze konie wyróżniają się doskonałym charakterem i pochodzeniem, a także odnoszą sukcesy na czempionatach i zawodach.",
+        "img": "/assets/images/Białka.jpeg"
+      },
+      {
+        "title": "🎓 Warsztaty jeździeckie",
+        "description": "Dla tych, którzy chcą rozwijać swoje umiejętności, organizujemy warsztaty jeździeckie, które łączą teorię z praktyką. Uczestnicy mogą doskonalić technikę jazdy, uczyć się pracy z koniem z ziemi, a także zdobywać wiedzę o pielęgnacji, żywieniu i treningu koni. ",
+        "img": "/assets/images/pamela.jpg"
       }
     ]
   },

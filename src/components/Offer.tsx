@@ -1,11 +1,7 @@
-// import React from 'react';
-
 import config from '../config/index.json';
 import Divider from './Divider';
 
 const Offer = () => {
-  // const [isHovered, setIsHovered] = useState(false);
-
   const { offer } = config;
   const { items: OfferList } = offer;
   return (
@@ -31,9 +27,9 @@ const Offer = () => {
             {OfferList.map((feature) => (
               <div key={feature.name} className="relative">
                 <dt>
-                  <div>
+                  <div className="w-full h-64 overflow-hidden">
                     <img
-                      className="h-80 min-w-full"
+                      className="w-full h-full object-cover"
                       src={feature.image}
                       alt={feature.name}
                     />

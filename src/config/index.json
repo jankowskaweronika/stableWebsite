@@ -53,11 +53,6 @@
         "title": "Profesjonalna hodowla i sukcesy sportowe",
         "description": "Z pasją zajmujemy się hodowlą koni, dbając o ich zdrowie, kondycję i odpowiednie przygotowanie do sportu i rekreacji. Nasze konie wyróżniają się doskonałym charakterem i pochodzeniem, a także odnoszą sukcesy na czempionatach i zawodach.",
         "img": "/assets/images/Białka.jpeg"
-      },
-      {
-        "title": "Warsztaty jeździeckie",
-        "description": "Dla tych, którzy chcą rozwijać swoje umiejętności, organizujemy warsztaty jeździeckie, które łączą teorię z praktyką. Uczestnicy mogą doskonalić technikę jazdy, uczyć się pracy z koniem z ziemi, a także zdobywać wiedzę o pielęgnacji, żywieniu i treningu koni. ",
-        "img": "/assets/images/pamela.jpg"
       }
     ]
   },
@@ -66,23 +61,33 @@
     "items": [
       {
         "name": "Lekcje jazdy konnej",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "description": "Oferujemy profesjonalne lekcje jazdy konnej dla osób w każdym wieku i na każdym poziomie zaawansowania. Nasze zajęcia prowadzone są przez wykwalifikowanych instruktorów, którzy indywidualnie dopasowują program nauki do potrzeb i umiejętności jeźdźca. Zapewniamy bezpieczne i przyjazne środowisko do nauki, spokojne i dobrze wyszkolone konie oraz kompletny sprzęt jeździecki.",
         "image": "/assets/images/zawody.jpeg"
       },
       {
         "name": "Warsztaty jeździeckie",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "description": "Zapraszamy na specjalistyczne warsztaty jeździeckie, podczas których zgłębisz tajniki jeździectwa pod okiem doświadczonych trenerów. Program warsztatów obejmuje zajęcia teoretyczne i praktyczne, naukę pielęgnacji koni oraz elementy ujeżdżenia i skoków. Warsztaty to doskonała okazja do intensywnego rozwoju umiejętności jeździeckich w przyjaznej atmosferze.",
         "image": "/assets/images/pastwisko.jpeg"
       },
       {
-        "name": "Weekend w siodle",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        "image": "/assets/images/Białka.jpeg"
+        "name": "Imprezy integracyjne",
+        "description": "Organizujemy wyjątkowe wydarzenia dla firm i grup zorganizowanych. W programie oferujemy podstawy jazdy konnej, pokazy jeździeckie, wspólne ognisko oraz różnorodne aktywności teambuildingowe. To świetna okazja do integracji zespołu w nietypowym otoczeniu oraz poznania jeździectwa w przyjaznej atmosferze.",
+        "image": "/assets/images/teren.jpeg"
       },
       {
         "name": "Wyjazdy w teren",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "description": "Odkryj piękno okolicznych lasów i łąk podczas naszych zorganizowanych wyjazdów w teren. Oferujemy trasy o różnym stopniu trudności, dostosowane do umiejętności jeźdźców. Nasze wyjazdy to nie tylko przyjemność z jazdy konnej, ale także okazja do podziwiania malowniczych krajobrazów i bliskiego kontaktu z naturą. Zapewniamy doświadczonych przewodników i bezpieczne, sprawdzone trasy.",
         "image": "/assets/images/teren.jpeg"
+      },
+      {
+        "name": "Hipoterapia",
+        "description": "Prowadzimy zajęcia hipoterapeutyczne dla dzieci i dorosłych pod okiem wykwalifikowanych terapeutów. Nasze łagodne i specjalnie wyszkolone konie pomagają w rehabilitacji osób z różnymi rodzajami niepełnosprawności. Zajęcia są indywidualnie dostosowane do potrzeb i możliwości każdego uczestnika, wspierając rozwój fizyczny i emocjonalny.",
+        "image": "/assets/images/zawody.jpeg"
+      },
+      {
+        "name": "Pensjonat dla koni",
+        "description": "Zapewniamy kompleksową opiekę nad Twoim koniem w naszej stajni. Oferujemy przestronne boksy, regularne karmienie wysokiej jakości paszą, codzienną pielęgnację, dostęp do padoków i pastwisk oraz opiekę weterynaryjną. Nasi doświadczeni pracownicy zadbają o codzienny ruch i dobrostan Twojego konia, zapewniając mu najlepsze warunki pobytu.",
+        "image": "/assets/images/pastwisko.jpeg"
       }
     ]
   },

@@ -4,13 +4,12 @@ import Divider from './Divider';
 const Offer = () => {
   const { offer } = config;
   const { items: OfferList } = offer;
+
   return (
-    <div className={`py-12 bg-background`} id="offer">
+    <section className="bg-green-50 py-16" id="offer">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="lg:text-center">
-          <h1
-            className={`w-full my-2 text-5xl font-bold leading-tight text-center text-primary`}
-          >
+        <div className="text-center">
+          <h1 className="text-5xl font-bold text-gray-800">
             {offer.title.split(' ').map((word, index) => (
               <span
                 key={index}
@@ -22,31 +21,40 @@ const Offer = () => {
           </h1>
           <Divider />
         </div>
-        <div className="mt-10">
-          <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
+
+        <div className="mt-16">
+          <div className="grid md:grid-cols-2 gap-12">
             {OfferList.map((feature) => (
-              <div key={feature.name} className="relative">
-                <dt>
-                  <div className="w-full h-64 overflow-hidden">
+              <div
+                key={feature.name}
+                className="relative bg-white rounded-lg overflow-hidden shadow-lg transform transition duration-300 hover:scale-105"
+              >
+                <div className="relative">
+                  <div className="aspect-w-16 aspect-h-9">
                     <img
-                      className="w-full h-full object-cover"
+                      className="w-full h-64 object-cover"
                       src={feature.image}
                       alt={feature.name}
                     />
                   </div>
-                  <p className="ml-16 text-lg leading-6 font-medium text-gray-900">
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent h-24" />
+                </div>
+
+                <div className="p-6">
+                  <h3 className="text-2xl font-bold text-gray-800 mb-3">
                     {feature.name}
+                  </h3>
+                  <div className="w-16 h-1 bg-green-700 mb-4" />
+                  <p className="text-gray-600 leading-relaxed">
+                    {feature.description}
                   </p>
-                </dt>
-                <dd className="mt-2 ml-16 text-base text-gray-500">
-                  {feature.description}
-                </dd>
+                </div>
               </div>
             ))}
-          </dl>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

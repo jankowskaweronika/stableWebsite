@@ -14,7 +14,7 @@ const About = () => {
   };
 
   return (
-    <section className={`bg-green-50 py-16`} id="about">
+    <section className={` py-16`} id="about">
       <div className={`container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8`}>
         <h1
           className={`w-full my-2 text-5xl font-bold leading-tight text-center text-primary`}

@@ -10,10 +10,10 @@ import Divider from './Divider';
 const Contact = () => {
   const { contact } = config;
   const { socialMedia } = contact;
-  const phoneNumber = '+48 513 097 988'; // Dodałem numer telefonu
+  const phoneNumber = '+48 513 097 988';
 
   return (
-    <section className="bg-green-50 py-8 sm:py-12 lg:py-16" id="contact">
+    <section className=" py-8 sm:py-12 lg:py-16" id="contact">
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h1 className="text-4xl sm:text-5xl font-bold leading-tight text-primary mb-4">

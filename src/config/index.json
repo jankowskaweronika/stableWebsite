@@ -42,12 +42,12 @@
       {
         "title": "Pasja i profesjonalizm",
         "description": "Stadnina Złota Podkowa powstała z miłości do koni i jeździectwa. Nasz zespół tworzą doświadczeni instruktorzy, którzy łączą wieloletnie doświadczenie z nieustannym rozwojem umiejętności. Szczególną uwagę przykładamy do indywidualnego podejścia do każdego konia i jeźdźca, budując relacje oparte na wzajemnym zaufaniu i szacunku.",
-        "img": "/assets/images/zawody.jpeg"
+        "img": "/assets/images/euforia.jpeg"
       },
       {
         "title": "Blisko natury",
         "description": "Nasza stadnina położona jest w malowniczej okolicy Niedrzwicy Kościelnej, otoczona rozległymi polami i lasami. To wyjątkowe miejsce, gdzie nasze konie mogą cieszyć się swobodą na przestronnych pastwiskach, a jeźdźcy odkrywać piękno przyrody podczas jazd terenowych.",
-        "img": "/assets/images/teren.jpeg"
+        "img": "/assets/images/pamela.jpg"
       },
       {
         "title": "Profesjonalna hodowla i sukcesy sportowe",
@@ -67,12 +67,12 @@
       {
         "name": "Warsztaty jeździeckie",
         "description": "Zapraszamy na specjalistyczne warsztaty jeździeckie, podczas których zgłębisz tajniki jeździectwa pod okiem doświadczonych trenerów. Program warsztatów obejmuje zajęcia teoretyczne i praktyczne, naukę pielęgnacji koni oraz elementy ujeżdżenia i skoków. Warsztaty to doskonała okazja do intensywnego rozwoju umiejętności jeździeckich w przyjaznej atmosferze.",
-        "image": "/assets/images/pastwisko.jpeg"
+        "image": "/assets/images/gab.jpg"
       },
       {
         "name": "Imprezy integracyjne",
         "description": "Organizujemy wyjątkowe wydarzenia dla firm i grup zorganizowanych. W programie oferujemy podstawy jazdy konnej, pokazy jeździeckie, wspólne ognisko oraz różnorodne aktywności teambuildingowe. To świetna okazja do integracji zespołu w nietypowym otoczeniu oraz poznania jeździectwa w przyjaznej atmosferze.",
-        "image": "/assets/images/teren.jpeg"
+        "image": "/assets/images/las.jpg"
       },
       {
         "name": "Wyjazdy w teren",
@@ -82,7 +82,7 @@
       {
         "name": "Hipoterapia",
         "description": "Prowadzimy zajęcia hipoterapeutyczne dla dzieci i dorosłych pod okiem wykwalifikowanych terapeutów. Nasze łagodne i specjalnie wyszkolone konie pomagają w rehabilitacji osób z różnymi rodzajami niepełnosprawności. Zajęcia są indywidualnie dostosowane do potrzeb i możliwości każdego uczestnika, wspierając rozwój fizyczny i emocjonalny.",
-        "image": "/assets/images/zawody.jpeg"
+        "image": "/assets/images/agata.jpg"
       },
       {
         "name": "Pensjonat dla koni",
@@ -104,7 +104,7 @@
       },
       {
         "label": "San",
-        "imgPath": "/assets/images/Białka.jpeg"
+        "imgPath": "/assets/images/bialka.jpg"
       },
       {
         "label": "San",

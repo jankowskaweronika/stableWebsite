@@ -7,6 +7,7 @@ import Header from '../components/Header';
 import LazyShow from '../components/LazyShow';
 import MainHero from '../components/MainHero';
 import MainHeroImage from '../components/MainHeroImage';
+import News from '../components/News';
 import Offer from '../components/Offer';
 import Slider from '../components/Slider';
 
@@ -25,6 +26,7 @@ const App = () => {
         <MainHeroImage />
       </div>
       <Canvas />
+      <News />
       <About />
       <Canvas />
       <LazyShow>

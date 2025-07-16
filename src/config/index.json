@@ -5,6 +5,10 @@
   },
   "navigation": [
     {
+      "name": "Aktualności",
+      "href": "news"
+    },
+    {
       "name": "O nas",
       "href": "about"
     },

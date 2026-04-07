@@ -1,3 +1,26 @@
 [build]
   publish = "out"
   command = "npm run build-prod"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-XSS-Protection = "1; mode=block"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com; img-src 'self' data: https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; font-src 'self'; frame-ancestors 'none'"
+
+[[redirects]]
+  from = "http://stajniazlotapodkowa.pl/*"
+  to = "https://stajniazlotapodkowa.pl/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.stajniazlotapodkowa.pl/*"
+  to = "https://stajniazlotapodkowa.pl/:splat"
+  status = 301
+  force = true

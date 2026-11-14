@@ -1,0 +1,169 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Cormorant Garamond Variable', 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Manrope Variable', 'Manrope', system-ui, sans-serif;
+
+  --color-night: #0b0f0d;
+  --color-forest-950: #0f1512;
+  --color-forest-900: #141c18;
+  --color-forest-800: #1c2721;
+  --color-forest-700: #2a3830;
+  --color-gold-200: #f1dfae;
+  --color-gold-300: #e6c983;
+  --color-gold-400: #d4ad5c;
+  --color-gold-500: #b8913f;
+  --color-gold-600: #8f6f2c;
+  --color-cream: #f2ece0;
+  --color-mist: #b9b4a6;
+  --color-stone-muted: #8d8a7f;
+
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+  }
+
+  body {
+    @apply bg-night font-sans text-cream antialiased;
+    font-feature-settings: 'ss01';
+  }
+
+  ::selection {
+    @apply bg-gold-400 text-night;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-gold-300);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@utility container-page {
+  @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12;
+}
+
+@utility eyebrow {
+  @apply font-sans text-xs font-semibold tracking-[0.32em] text-gold-300 uppercase;
+}
+
+@utility display {
+  @apply font-display leading-[1.02] font-medium tracking-tight text-cream;
+}
+
+@utility gold-rule {
+  @apply h-px w-16 bg-gradient-to-r from-gold-400 to-transparent;
+}
+
+@utility btn {
+  @apply inline-flex min-h-12 items-center justify-center gap-3 rounded-full px-7 py-3 text-sm font-semibold tracking-[0.12em] uppercase transition duration-300 ease-(--ease-soft);
+}
+
+@utility btn-gold {
+  @apply btn bg-gold-400 text-night hover:bg-gold-300;
+}
+
+@utility btn-ghost {
+  @apply btn border border-gold-400/50 text-gold-200 hover:border-gold-300 hover:bg-gold-400/10;
+}
+
+@utility link-gold {
+  @apply text-gold-300 underline decoration-gold-500/40 underline-offset-4 transition hover:text-gold-200 hover:decoration-gold-300;
+}
+
+@utility todo-mark {
+  @apply inline-block rounded-sm border border-dashed border-gold-500/70 bg-gold-500/10 px-2 py-0.5 text-sm text-gold-200 italic;
+}
+
+@utility field {
+  @apply w-full rounded-md border border-forest-700 bg-forest-950 px-4 py-3 text-cream placeholder:text-stone-muted transition focus:border-gold-400 focus:outline-none focus-visible:outline-2 focus-visible:outline-gold-300;
+}
+
+@utility prose-stable {
+  @apply space-y-5 text-lg leading-relaxed text-mist;
+
+  & strong {
+    @apply font-semibold text-cream;
+  }
+
+  & ul {
+    @apply space-y-2 border-l border-gold-500/40 pl-6;
+  }
+
+  & li {
+    @apply relative;
+  }
+
+  & li::before {
+    content: '';
+    @apply absolute top-[0.7em] -left-[1.65rem] size-1.5 rotate-45 bg-gold-400;
+  }
+
+  & h2,
+  & h3 {
+    @apply pt-4 font-display text-3xl text-cream;
+  }
+
+  & a {
+    @apply link-gold;
+  }
+}
+
+@keyframes reveal-up {
+  from {
+    transform: translateY(32px);
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: reveal-up linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 45%;
+    }
+  }
+}
+
+@keyframes hero-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-in {
+    animation: hero-in 1.1s var(--ease-soft) both;
+    animation-delay: calc(var(--i, 0) * 120ms);
+  }
+
+  .hero-zoom {
+    animation: hero-zoom 18s ease-out both;
+  }
+
+  @keyframes hero-zoom {
+    from {
+      transform: scale(1.08);
+    }
+  }
+}

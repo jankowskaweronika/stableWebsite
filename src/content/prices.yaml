@@ -1,0 +1,52 @@
+- id: jazdy-konne
+  title: Jazdy konne
+  order: 1
+  intro: Jazdy indywidualne dla początkujących i zaawansowanych.
+  items:
+    - name: Jazda indywidualna — 60 min
+      price: 120
+      unit: 60 min
+    - name: Jazda indywidualna — 30 min
+      price: 70
+      unit: 30 min
+- id: hipoterapia
+  title: Hipoterapia
+  order: 2
+  items:
+    - name: Zajęcia hipoterapii
+      price: 70
+      unit: 30 min
+- id: wyjazdy-w-teren
+  title: Wyjazdy w teren
+  order: 3
+  items:
+    - name: Wyjazd w teren
+      price: 150
+      unit: 1,5–2 h
+- id: pensjonat
+  title: Pensjonat dla koni
+  order: 4
+  items:
+    - name: Boks z pełną opieką
+      price: 1000
+      unit: miesiąc
+  extras:
+    - name: Lonżowanie / trening
+    - name: Opieka przy wizytach kowala i weterynarza
+- id: imprezy
+  title: Imprezy
+  order: 5
+  items:
+    - name: Urodziny w stajni
+    - name: Imprezy integracyjne
+- id: sesje-zdjeciowe
+  title: Sesje zdjęciowe
+  order: 6
+  items:
+    - name: Sesja zdjęciowa z koniem
+      description: Z własnym fotografem
+- id: warsztaty
+  title: Warsztaty jeździeckie
+  order: 7
+  items:
+    - name: Warsztaty jeździeckie

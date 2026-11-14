@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import OfferDetails from '../components/OfferDetails.astro';
+import ContactCta from '../components/ContactCta.astro';
+import { getOffer } from '../lib/content';
+
+const offer = await getOffer('pensjonat');
+---
+
+<BaseLayout title={offer.data.title} description={offer.data.summary} image={offer.data.image}>
+  <PageHero
+    eyebrow="Pensjonat"
+    title="Spokojny dom <em class='text-gold-200'>dla Twojego konia</em>"
+    lead={offer.data.summary}
+    image={offer.data.image}
+    imageAlt={offer.data.imageAlt}
+  />
+  <OfferDetails
+    offerId="pensjonat"
+    priceCategoryId="pensjonat"
+    includedTitle="W cenie pensjonatu"
+    infrastructureTitle="Infrastruktura"
+    extraServicesTitle="Usługi dodatkowe (płatne osobno)"
+    galleryTitle="Stajnia i pastwiska"
+    topic="pensjonat"
+    ctaLabel="Zapytaj o wolne miejsca"
+  />
+  <ContactCta title="Szukasz miejsca dla swojego konia?" text="Umów się na wizytę — pokażemy stajnię, boksy i pastwiska." topic="pensjonat" />
+</BaseLayout>

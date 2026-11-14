@@ -1,0 +1,46 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+type Props = Pick<CollectionEntry<'achievements'>['data'], 'classNumber' | 'category' | 'scores'>;
+
+const { classNumber, category, scores = [] } = Astro.props;
+
+const scoreGroups = scores.map((score) => ({ ...score, items: score.items ?? [] }));
+
+const classLabel = classNumber ? `${classNumber} – ${category}` : category;
+---
+
+<p class="mt-4 text-sm text-mist">
+  <span class="text-stone-muted">Klasa:</span> {classLabel}
+</p>
+
+{
+  scoreGroups.length > 0 && (
+    <details class="group mt-4 text-sm">
+      <summary class="link-gold cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+        <span class="group-open:hidden">Pokaż oceny sędziów</span>
+        <span class="hidden group-open:inline">Ukryj oceny sędziów</span>
+      </summary>
+      <div class="mt-3 grid gap-4 sm:grid-cols-2">
+        {scoreGroups.map((score) => (
+          <div class="rounded-md border border-forest-700/80 bg-forest-950/60 p-4">
+            <p class="eyebrow text-[0.65rem] text-gold-400">
+              {score.group} · suma {score.total}
+            </p>
+            {score.items.length > 0 && (
+              <dl class="mt-3 space-y-1">
+                {score.items.map((item) => (
+                  <div class="flex justify-between gap-4">
+                    <dt class="text-stone-muted">{item.label}</dt>
+                    <dd class="text-right text-cream tabular-nums">{item.value}</dd>
+                  </div>
+                ))}
+              </dl>
+            )}
+          </div>
+        ))}
+      </div>
+      <p class="mt-2 text-xs text-stone-muted">Średnie z ocen sędziów według oficjalnego protokołu.</p>
+    </details>
+  )
+}

@@ -1,0 +1,153 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import { formatDate, getSettings } from '../lib/content';
+
+const site = await getSettings();
+const lastUpdated = new Date('2026-11-14');
+
+const cookies = [
+  { name: 'cc_cookie', provider: site.name, purpose: 'Zapamiętanie Twoich wyborów dotyczących cookies', category: 'Niezbędne', lifetime: '6 miesięcy' },
+  { name: '_ga', provider: 'Google (Google Analytics 4)', purpose: 'Rozróżnianie użytkowników na potrzeby statystyk', category: 'Analityczne', lifetime: '2 lata' },
+  { name: '_ga_*', provider: 'Google (Google Analytics 4)', purpose: 'Utrzymanie stanu sesji w statystykach', category: 'Analityczne', lifetime: '2 lata' },
+  { name: 'NID, AEC i inne', provider: 'Google (Google Maps)', purpose: 'Działanie osadzonej mapy, preferencje i bezpieczeństwo', category: 'Mapy', lifetime: 'do 13 miesięcy' },
+];
+---
+
+<BaseLayout
+  title="Polityka prywatności"
+  description="Polityka prywatności i plików cookies Stajni Złota Podkowa — administrator danych, cele przetwarzania, Google Analytics, Google Maps, formularz kontaktowy, prawa RODO."
+>
+  <PageHero eyebrow="Informacje prawne" title="Polityka prywatności" lead={`Ostatnia aktualizacja: ${formatDate(lastUpdated)}`} />
+
+  <div class="container-page max-w-4xl pb-24">
+    <div class="prose-stable">
+      <h2>1. Administrator danych</h2>
+      <p>
+        Administratorem Twoich danych osobowych jest {site.company.legalName}, {site.company.registeredAddress}, NIP{' '}
+        {site.company.nip}, prowadząca stajnię pod nazwą {site.name}.
+      </p>
+      <p>
+        W sprawach dotyczących danych osobowych możesz kontaktować się z nami e-mailowo:{' '}
+        <a href={`mailto:${site.email}`}>{site.email}</a>, telefonicznie:{' '}
+        <span class="whitespace-nowrap">{site.phone.display}</span> lub listownie na adres podany powyżej.
+      </p>
+
+      <h2>2. Jakie dane i w jakim celu przetwarzamy</h2>
+      <ul>
+        <li>
+          <strong>Formularz kontaktowy</strong> — imię i nazwisko, e-mail lub numer telefonu, temat i treść wiadomości. Dane z formularza są
+          wysyłane e-mailem z serwera naszego hostingu (OVH) na skrzynkę pocztową stajni i nie są zapisywane w żadnej bazie danych na stronie. Przetwarzamy je, aby
+          odpowiedzieć na Twoje zapytanie i podjąć działania przed zawarciem umowy (art. 6 ust. 1 lit. b RODO) oraz w naszym prawnie
+          uzasadnionym interesie, jakim jest prowadzenie korespondencji (art. 6 ust. 1 lit. f RODO).
+        </li>
+        <li>
+          <strong>Kontakt telefoniczny i e-mailowy</strong> — dane, które sam nam przekażesz, w tych samych celach i na tych samych podstawach co
+          powyżej.
+        </li>
+        <li>
+          <strong>Statystyki odwiedzin (Google Analytics 4)</strong> — wyłącznie po wyrażeniu zgody na cookies analityczne (art. 6 ust. 1 lit. a
+          RODO). Zbieramy informacje o sposobie korzystania ze strony, np. odwiedzane podstrony, przybliżoną lokalizację, typ urządzenia i
+          przeglądarki. Korzystamy z trybu zgody Google (Consent Mode v2) — dopóki nie wyrazisz zgody, cookies analityczne nie są zapisywane.
+        </li>
+        <li>
+          <strong>Mapa Google Maps</strong> — mapa dojazdu wczytuje się dopiero po wyrażeniu zgody na kategorię „Mapy” lub po kliknięciu
+          przycisku „Pokaż mapę” (art. 6 ust. 1 lit. a RODO). Wtedy Google otrzymuje m.in. Twój adres IP i może zapisać własne cookies.
+        </li>
+        <li>
+          <strong>Logi serwera</strong> — serwer hostingowy automatycznie zapisuje techniczne informacje o połączeniu (m.in. adres IP, datę, adres
+          podstrony) w celu zapewnienia bezpieczeństwa strony (art. 6 ust. 1 lit. f RODO).
+        </li>
+      </ul>
+
+      <h2>3. Odbiorcy danych</h2>
+      <p>Twoje dane mogą być przekazywane podmiotom, które przetwarzają je w naszym imieniu:</p>
+      <ul>
+        <li>
+          <strong>Google Ireland Limited</strong> (Gordon House, Barrow Street, Dublin 4, Irlandia) — dostawca Google Analytics i Google Maps. Dane
+          mogą być przekazywane do Google LLC w USA na podstawie decyzji Komisji Europejskiej stwierdzającej odpowiedni stopień ochrony (EU-US
+          Data Privacy Framework).
+        </li>
+        <li>
+          <strong>Dostawca hostingu</strong> — OVH, na którego serwerach działa strona i za pośrednictwem którego wiadomości z formularza
+          kontaktowego są wysyłane e-mailem na naszą skrzynkę pocztową.
+        </li>
+        <li><strong>Dostawca poczty e-mail</strong>, na której skrzynkę trafiają wiadomości z formularza i korespondencja.</li>
+      </ul>
+
+      <h2>4. Jak długo przechowujemy dane</h2>
+      <ul>
+        <li>Wiadomości z formularza i korespondencję — przez czas potrzebny do obsługi zapytania, a następnie do upływu okresu przedawnienia ewentualnych roszczeń.</li>
+        <li>Dane w Google Analytics — zgodnie z ustawieniami Google Analytics, nie dłużej niż 14 miesięcy.</li>
+        <li>Pliki cookies — przez okresy podane w tabeli poniżej lub do czasu ich usunięcia w przeglądarce.</li>
+      </ul>
+
+      <h2>5. Pliki cookies</h2>
+      <p>
+        Cookies to niewielkie pliki zapisywane na Twoim urządzeniu. Niezbędne cookies stosujemy zawsze — bez nich nie zapamiętamy Twoich
+        wyborów. Pozostałe kategorie włączamy wyłącznie za Twoją zgodą.
+      </p>
+    </div>
+
+    <div class="my-8 overflow-x-auto rounded-lg border border-forest-700">
+      <table class="w-full min-w-[40rem] text-left text-sm">
+        <caption class="sr-only">Lista plików cookies używanych na stronie</caption>
+        <thead class="bg-forest-900 text-xs tracking-wider text-gold-300 uppercase">
+          <tr>
+            <th scope="col" class="px-4 py-3">Nazwa</th>
+            <th scope="col" class="px-4 py-3">Dostawca</th>
+            <th scope="col" class="px-4 py-3">Cel</th>
+            <th scope="col" class="px-4 py-3">Kategoria</th>
+            <th scope="col" class="px-4 py-3">Czas</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-forest-800 text-mist">
+          {
+            cookies.map((cookie) => (
+              <tr>
+                <th scope="row" class="px-4 py-3 font-mono text-cream">{cookie.name}</th>
+                <td class="px-4 py-3">{cookie.provider}</td>
+                <td class="px-4 py-3">{cookie.purpose}</td>
+                <td class="px-4 py-3">{cookie.category}</td>
+                <td class="px-4 py-3">{cookie.lifetime}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <div class="prose-stable">
+      <h2>6. Twoje prawa</h2>
+      <p>Na zasadach określonych w RODO przysługuje Ci prawo do:</p>
+      <ul>
+        <li>dostępu do swoich danych i otrzymania ich kopii,</li>
+        <li>sprostowania (poprawienia) danych,</li>
+        <li>usunięcia danych,</li>
+        <li>ograniczenia przetwarzania,</li>
+        <li>przenoszenia danych,</li>
+        <li>wniesienia sprzeciwu wobec przetwarzania opartego na prawnie uzasadnionym interesie,</li>
+        <li>cofnięcia zgody w dowolnym momencie — bez wpływu na zgodność z prawem przetwarzania przed jej cofnięciem,</li>
+        <li>wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych (ul. Stawki 2, 00-193 Warszawa).</li>
+      </ul>
+      <p>
+        Podanie danych w formularzu jest dobrowolne, ale niezbędne, abyśmy mogli odpowiedzieć na wiadomość. Nie podejmujemy wobec Ciebie
+        decyzji w sposób zautomatyzowany ani nie profilujemy Cię.
+      </p>
+
+      <h2>7. Jak wycofać lub zmienić zgodę</h2>
+      <p>
+        W każdej chwili możesz zmienić lub wycofać zgodę na cookies analityczne i mapy — kliknij „Ustawienia cookies” w stopce strony lub
+        przycisk poniżej. Możesz też usunąć cookies w ustawieniach swojej przeglądarki.
+      </p>
+    </div>
+    <p class="mt-6">
+      <button type="button" data-cc="show-preferencesModal" class="btn-ghost">Otwórz ustawienia cookies</button>
+    </p>
+
+    <div class="prose-stable mt-10">
+      <h2>8. Zmiany polityki</h2>
+      <p>Politykę możemy aktualizować, np. gdy zmienią się używane narzędzia. Aktualna wersja jest zawsze dostępna na tej stronie.</p>
+    </div>
+  </div>
+</BaseLayout>

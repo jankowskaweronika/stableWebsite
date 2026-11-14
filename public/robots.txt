@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /kontakt/dziekujemy/
+
+Sitemap: https://stajniazlotapodkowa.pl/sitemap-index.xml

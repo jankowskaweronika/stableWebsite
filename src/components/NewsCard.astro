@@ -1,0 +1,42 @@
+---
+import { Picture } from 'astro:assets';
+import { resolveImage } from '../lib/images';
+import { formatDate, toIsoDate } from '../lib/content';
+
+interface Props {
+  id: string;
+  title: string;
+  date: Date;
+  excerpt: string;
+  image?: string;
+  imageAlt?: string;
+  headingLevel?: 'h2' | 'h3';
+}
+
+const { id, title, date, excerpt, image, imageAlt = '', headingLevel: Heading = 'h3' } = Astro.props;
+---
+
+<article class="group reveal relative flex flex-col overflow-hidden rounded-lg border border-forest-700/80 bg-forest-900/60">
+  {
+    image && (
+      <div class="aspect-[16/10] overflow-hidden">
+        <Picture
+          src={resolveImage(image)}
+          alt={imageAlt}
+          formats={['avif', 'webp']}
+          widths={[400, 640, 900]}
+          sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw"
+          class="h-full w-full object-cover opacity-90 transition duration-1000 ease-(--ease-soft) group-hover:scale-105 group-hover:opacity-100"
+        />
+      </div>
+    )
+  }
+  <div class="flex flex-1 flex-col gap-3 p-6">
+    <time datetime={toIsoDate(date)} class="eyebrow text-[0.68rem]">{formatDate(date)}</time>
+    <Heading class="font-display text-2xl leading-snug text-cream">
+      <a href={`/aktualnosci/${id}/`} class="after:absolute after:inset-0 group-hover:text-gold-200">{title}</a>
+    </Heading>
+    <p class="text-mist">{excerpt}</p>
+  </div>
+  <div class="pointer-events-none absolute inset-0 rounded-lg ring-gold-300 ring-inset group-has-[a:focus-visible]:ring-2"></div>
+</article>

@@ -1,0 +1,205 @@
+---
+import { Picture } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import OfferCard from '../components/OfferCard.astro';
+import NewsCard from '../components/NewsCard.astro';
+import PhotoGrid from '../components/PhotoGrid.astro';
+import ContactCta from '../components/ContactCta.astro';
+import PostalAddress from '../components/PostalAddress.astro';
+import AchievementSources from '../components/AchievementSources.astro';
+import { resolveImage } from '../lib/images';
+import { trailingCardLayout } from '../lib/grid';
+import {
+  formatMonth,
+  getHome,
+  getHomeAchievements,
+  getOffers,
+  getPublishedNews,
+  getSettings,
+} from '../lib/content';
+
+const site = await getSettings();
+const home = await getHome();
+const offers = await getOffers();
+const latestNews = (await getPublishedNews()).slice(0, 3);
+const achievements = await getHomeAchievements();
+---
+
+<BaseLayout>
+  <section class="relative isolate flex min-h-[100svh] items-end overflow-hidden pt-32 pb-16 sm:pt-40 sm:pb-24">
+    <div class="absolute inset-0 -z-10">
+      <Picture
+        src={resolveImage(home.hero.image)}
+        alt={home.hero.imageAlt}
+        formats={['avif', 'webp']}
+        widths={[640, 1024, 1440, 1728]}
+        sizes="100vw"
+        loading="eager"
+        fetchpriority="high"
+        class="hero-zoom h-full w-full object-cover"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-night via-night/55 to-night/30"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-night/80 via-night/20 to-transparent"></div>
+    </div>
+
+    <div class="container-page">
+      <p class="eyebrow hero-in">{home.hero.eyebrow}</p>
+      <h1 class="display hero-in mt-6 max-w-4xl text-[3.25rem] sm:text-7xl lg:text-8xl xl:text-9xl" style="--i:1">
+        {site.name}
+      </h1>
+      <p class="hero-in mt-8 max-w-xl text-lg leading-relaxed text-cream/85 sm:text-xl" style="--i:2">
+        {home.hero.lead}
+      </p>
+      <div class="hero-in mt-10 flex flex-col gap-3 sm:flex-row" style="--i:3">
+        <a href="#oferta" class="btn-gold">Poznaj ofertę</a>
+        <a href={`tel:${site.phone.number}`} class="btn-ghost whitespace-nowrap">Zadzwoń {site.phone.display}</a>
+      </div>
+      <div class="hero-in mt-16 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-mist" style="--i:4">
+        <span class="gold-rule"></span>
+        <PostalAddress address={site.address} />
+        <a href={site.maps.directionsUrl} target="_blank" rel="noopener noreferrer" class="link-gold">
+          Jak dojechać<span class="sr-only"> (otwiera się w nowej karcie)</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="o-nas" class="py-24 sm:py-32">
+    <div class="container-page">
+      <SectionHeading id="o-nas" index="I." eyebrow="Poznaj nas" title={home.about.title} />
+      <div class="mt-16 space-y-20 sm:space-y-28">
+        {
+          home.about.items.map((item, index) => (
+            <article class="grid items-center gap-10 lg:grid-cols-12 lg:gap-16">
+              <div class:list={['reveal relative lg:col-span-7', index % 2 === 1 && 'lg:order-2']}>
+                <div class="aspect-[4/3] overflow-hidden rounded-lg">
+                  <Picture
+                    src={resolveImage(item.image)}
+                    alt={item.imageAlt}
+                    formats={['avif', 'webp']}
+                    widths={[480, 800, 1200]}
+                    sizes="(min-width: 1024px) 55vw, 100vw"
+                    class="h-full w-full object-cover"
+                  />
+                </div>
+                <div
+                  class:list={[
+                    'absolute -bottom-4 -z-10 h-full w-full rounded-lg border border-gold-500/40',
+                    index % 2 === 1 ? '-left-4' : '-right-4',
+                  ]}
+                />
+              </div>
+              <div class:list={['reveal lg:col-span-5', index % 2 === 1 && 'lg:order-1']}>
+                <span class="font-display text-6xl text-gold-500/50 italic">{String(index + 1).padStart(2, '0')}</span>
+                <h3 class="display mt-2 text-3xl sm:text-4xl">{item.title}</h3>
+                <div class="gold-rule my-6" />
+                <p class="text-lg leading-relaxed text-mist">{item.description}</p>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section id="oferta" aria-labelledby="oferta-tytul" class="scroll-mt-20 bg-forest-950 py-24 sm:py-32">
+    <div class="container-page">
+      <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+        <SectionHeading id="oferta-tytul" index="II." eyebrow="Oferta" title="Wszystko, co dzieje się w siodle i wokół niego" />
+        <a href="/cennik/" class="btn-ghost reveal self-start lg:self-auto">Zobacz cennik</a>
+      </div>
+      <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          offers.map((offer, index) => (
+            <OfferCard
+              title={offer.data.title}
+              summary={offer.data.summary}
+              href={offer.data.href}
+              image={offer.data.image}
+              imageAlt={offer.data.imageAlt}
+              number={index + 1}
+              layout={trailingCardLayout(index, offers.length)}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  {
+    achievements.length > 0 && (
+      <section aria-labelledby="osiagniecia" class="relative py-24 sm:py-32">
+        <div class="container-page grid gap-14 lg:grid-cols-12">
+          <div class="lg:col-span-5">
+            <SectionHeading id="osiagniecia" index="III." eyebrow="Hodowla i sukcesy" title="Nasze konie na czempionatach">
+              <p class="mt-6 text-lg text-mist">
+                Hodujemy konie o doskonałym charakterze i pochodzeniu. Oto najważniejsze i najnowsze wyniki naszych wychowanków.
+              </p>
+            </SectionHeading>
+            <a href="/hodowla-i-osiagniecia/" class="btn-ghost reveal mt-10">
+              Hodowla i osiągnięcia
+            </a>
+          </div>
+          <ol class="grid gap-4 lg:col-span-7">
+            {achievements.map((achievement) => (
+              <li
+                class:list={[
+                  'reveal flex items-center gap-6 rounded-lg border bg-forest-900/60 p-6',
+                  achievement.data.featured ? 'border-gold-500/60' : 'border-forest-700/80',
+                ]}
+              >
+                <p class="min-w-28 font-display text-4xl text-gold-200 sm:text-5xl">{achievement.data.result}</p>
+                <div>
+                  <p class="font-display text-2xl text-cream">{achievement.data.horse}</p>
+                  {achievement.data.title && <p class="text-sm font-semibold text-gold-200">{achievement.data.title}</p>}
+                  <p class="text-sm text-mist">
+                    {achievement.data.category} · {achievement.data.event}
+                  </p>
+                  <p class="mt-1 text-xs tracking-wide text-stone-muted">{formatMonth(achievement.data.date)}</p>
+                  <AchievementSources {...achievement.data} class="mt-2 text-xs" />
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+    )
+  }
+
+  {
+    latestNews.length > 0 && (
+      <section aria-labelledby="aktualnosci" class="bg-forest-950 py-24 sm:py-32">
+        <div class="container-page">
+          <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+            <SectionHeading id="aktualnosci" index="IV." eyebrow="Aktualności" title="Co słychać w stajni" />
+            <a href="/aktualnosci/" class="btn-ghost reveal self-start lg:self-auto">
+              Wszystkie aktualności
+            </a>
+          </div>
+          <div class="mt-14 grid gap-6 md:grid-cols-3">
+            {latestNews.map((post) => (
+              <NewsCard id={post.id} {...post.data} />
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  <section aria-labelledby="galeria" class="py-24 sm:py-32">
+    <div class="container-page">
+      <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+        <SectionHeading id="galeria" index="V." eyebrow="Galeria" title="Chwile z życia stajni" />
+        <a href={site.socials.instagram} target="_blank" rel="noopener noreferrer" class="btn-ghost reveal self-start lg:self-auto">
+          Więcej na Instagramie<span class="sr-only"> (otwiera się w nowej karcie)</span>
+        </a>
+      </div>
+      <div class="mt-14">
+        <PhotoGrid photos={home.gallery} variant="mosaic" />
+      </div>
+    </div>
+  </section>
+
+  <ContactCta />
+</BaseLayout>

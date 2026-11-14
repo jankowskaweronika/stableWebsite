@@ -1,0 +1,82 @@
+---
+import { Image, Picture } from 'astro:assets';
+import Todo from './Todo.astro';
+import { horseSexLabels, isTodo, type HorseSex } from '../lib/content';
+import { resolveImage } from '../lib/images';
+
+interface Props {
+  name: string;
+  breed: string;
+  sex: HorseSex;
+  born: number | 'TODO';
+  sire: string;
+  dam: string;
+  damSire: string;
+  image?: string | undefined;
+  imageAlt?: string | undefined;
+  imagePosition?: string | undefined;
+  imageFit?: 'cover' | 'contain' | undefined;
+  headingLevel?: 'h3' | 'h4';
+}
+
+const { name, breed, sex, born, sire, dam, damSire, image, imageAlt, imagePosition = 'center', imageFit = 'cover', headingLevel: Heading = 'h3' } = Astro.props;
+
+const details = [
+  { label: 'Rasa', value: breed },
+  { label: 'Płeć', value: horseSexLabels[sex].singular },
+  { label: 'Rocznik', value: String(born) },
+  { label: 'Ojciec', value: sire },
+  { label: 'Matka', value: dam },
+  { label: 'Ojciec matki', value: damSire },
+];
+---
+
+<article class="reveal overflow-hidden rounded-lg border border-forest-700/80 bg-forest-900">
+  <div class="relative aspect-[4/3] overflow-hidden bg-forest-950">
+    {
+      image ? (
+        <>
+          {imageFit === 'contain' && (
+            <Image
+              src={resolveImage(image)}
+              alt=""
+              width={96}
+              format="webp"
+              aria-hidden="true"
+              class="absolute inset-0 h-full w-full scale-125 object-cover opacity-75 blur-xl brightness-75"
+            />
+          )}
+          <Picture
+            src={resolveImage(image)}
+            alt={imageAlt ?? `Koń ${name}`}
+            formats={['avif', 'webp']}
+            widths={[400, 700]}
+            sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw"
+            class:list={['relative h-full w-full', imageFit === 'contain' ? 'object-contain' : 'object-cover']}
+            style={{ objectPosition: imagePosition }}
+          />
+        </>
+      ) : (
+        <div class="grid h-full place-items-center gap-3 text-center">
+          <svg viewBox="0 0 200 200" class="size-24 text-gold-500/40" fill="none" stroke="currentColor" stroke-width="10" aria-hidden="true">
+            <path d="M40 30v70a60 60 0 0 0 120 0V30" stroke-linecap="round" />
+          </svg>
+          <p class="eyebrow text-[0.65rem] text-stone-muted">Zdjęcie wkrótce</p>
+        </div>
+      )
+    }
+  </div>
+  <div class="p-6 sm:p-7">
+    <Heading class="font-display text-3xl text-cream">{name}</Heading>
+    <dl class="mt-5 grid grid-cols-2 gap-x-6 gap-y-4 text-sm">
+      {
+        details.map((detail) => (
+          <div>
+            <dt class="eyebrow text-[0.65rem] text-gold-400">{detail.label}</dt>
+            <dd class="mt-1 text-cream">{isTodo(detail.value) ? <Todo /> : detail.value}</dd>
+          </div>
+        ))
+      }
+    </dl>
+  </div>
+</article>

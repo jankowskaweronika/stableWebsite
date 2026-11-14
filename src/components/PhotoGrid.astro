@@ -1,0 +1,41 @@
+---
+import { Picture } from 'astro:assets';
+import { resolveImage } from '../lib/images';
+
+interface Props {
+  photos: { image: string; alt: string }[];
+  variant?: 'mosaic' | 'row';
+}
+
+const { photos, variant = 'row' } = Astro.props;
+const isMosaic = variant === 'mosaic';
+
+function tileClasses(index: number) {
+  if (!isMosaic) return 'aspect-[4/3]';
+  if (index === 0) return 'col-span-2 aspect-square lg:col-span-3 lg:row-span-2 lg:aspect-auto';
+  if (index === 1) return 'aspect-[4/3] lg:col-span-2 lg:aspect-auto';
+  return 'aspect-[4/3] lg:aspect-auto';
+}
+---
+
+<ul
+  class:list={[
+    'grid gap-3 sm:gap-4',
+    isMosaic ? 'grid-cols-2 lg:auto-rows-[15rem] lg:grid-cols-6' : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3',
+  ]}
+>
+  {
+    photos.map((photo, index) => (
+      <li class:list={['reveal overflow-hidden rounded-md bg-forest-900', tileClasses(index)]}>
+        <Picture
+          src={resolveImage(photo.image)}
+          alt={photo.alt}
+          formats={['avif', 'webp']}
+          widths={[400, 700, 1100]}
+          sizes={isMosaic && index === 0 ? '(min-width: 1024px) 50vw, 100vw' : '(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw'}
+          class="h-full w-full object-cover transition duration-1000 ease-(--ease-soft) hover:scale-105"
+        />
+      </li>
+    ))
+  }
+</ul>

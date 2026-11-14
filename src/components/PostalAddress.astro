@@ -1,0 +1,16 @@
+---
+import type { PostalAddressFields } from '../lib/content';
+
+interface Props {
+  address: PostalAddressFields;
+  class?: string;
+}
+
+const { address, class: className = '' } = Astro.props;
+---
+
+<span class:list={['block', className]}>
+  <span class="block whitespace-nowrap">{address.locality}</span>{' '}
+  <span class="block whitespace-nowrap">{address.street},</span>{' '}
+  <span class="block whitespace-nowrap">{address.postalCode} {address.postTown}</span>
+</span>

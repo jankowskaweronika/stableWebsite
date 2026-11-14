@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import NewsCard from '../../components/NewsCard.astro';
+import { getPublishedNews } from '../../lib/content';
+
+const news = await getPublishedNews();
+---
+
+<BaseLayout title="Aktualności" description="Aktualności ze Stajni Złota Podkowa — nowe zajęcia, sekcja jeździecka, wyniki naszych koni na czempionatach.">
+  <PageHero
+    eyebrow="Aktualności"
+    title="Wieści <em class='text-gold-200'>ze stajni</em>"
+    lead="Nowe zajęcia, wydarzenia i sukcesy naszych koni."
+  />
+  <section class="container-page pb-24">
+    <h2 class="sr-only">Lista aktualności</h2>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {news.map((post) => <NewsCard id={post.id} headingLevel="h3" {...post.data} />)}
+    </div>
+  </section>
+</BaseLayout>

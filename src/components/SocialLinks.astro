@@ -1,0 +1,39 @@
+---
+interface Props {
+  socials: { facebook: string; instagram: string };
+  class?: string;
+}
+
+const { socials, class: className = '' } = Astro.props;
+---
+
+<ul class:list={['flex gap-3', className]}>
+  <li>
+    <a
+      href={socials.facebook}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="grid size-11 place-items-center rounded-full border border-gold-400/40 text-gold-200 transition hover:border-gold-300 hover:bg-gold-400/10"
+    >
+      <span class="sr-only">Facebook (otwiera się w nowej karcie)</span>
+      <svg viewBox="0 0 24 24" class="size-5" fill="currentColor" aria-hidden="true">
+        <path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.6-1.5h1.6V4.4a21 21 0 0 0-2.4-.1c-2.4 0-4 1.4-4 4.1v2.1H7.7v3h2.6V21z" />
+      </svg>
+    </a>
+  </li>
+  <li>
+    <a
+      href={socials.instagram}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="grid size-11 place-items-center rounded-full border border-gold-400/40 text-gold-200 transition hover:border-gold-300 hover:bg-gold-400/10"
+    >
+      <span class="sr-only">Instagram (otwiera się w nowej karcie)</span>
+      <svg viewBox="0 0 24 24" class="size-5" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+        <rect x="3.5" y="3.5" width="17" height="17" rx="5" />
+        <circle cx="12" cy="12" r="4" />
+        <circle cx="17.3" cy="6.7" r="0.6" fill="currentColor" />
+      </svg>
+    </a>
+  </li>
+</ul>

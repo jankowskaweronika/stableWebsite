@@ -1,0 +1,29 @@
+---
+interface Props {
+  url?: string | undefined;
+  protocolUrl?: string | undefined;
+  sourceLabel: string;
+  class?: string;
+}
+
+const { url, protocolUrl, sourceLabel, class: className } = Astro.props;
+---
+
+{
+  (url || protocolUrl) && (
+    <p class:list={['flex flex-wrap gap-x-5 gap-y-1', className]}>
+      {url && (
+        <a href={url} target="_blank" rel="noopener noreferrer" class="link-gold">
+          Źródło: {sourceLabel}
+          <span class="sr-only"> (otwiera się w nowej karcie)</span>
+        </a>
+      )}
+      {protocolUrl && (
+        <a href={protocolUrl} target="_blank" rel="noopener noreferrer" class="text-mist underline-offset-4 hover:text-gold-200 hover:underline">
+          Protokół (PDF)
+          <span class="sr-only"> (otwiera się w nowej karcie)</span>
+        </a>
+      )}
+    </p>
+  )
+}

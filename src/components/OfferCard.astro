@@ -1,0 +1,79 @@
+---
+import { Picture } from 'astro:assets';
+import { resolveImage } from '../lib/images';
+import type { TrailingCardLayout } from '../lib/grid';
+
+interface Props {
+  title: string;
+  summary: string;
+  href: string;
+  image: string;
+  imageAlt: string;
+  number: number;
+  layout?: TrailingCardLayout | undefined;
+}
+
+const { title, summary, href, image, imageAlt, number, layout } = Astro.props;
+const wideInTwoColumns = layout?.fillsRowInTwoColumns ?? false;
+const wideInThreeColumns = layout?.fillsRowInThreeColumns ?? false;
+const narrowAgainInThreeColumns = wideInTwoColumns && !wideInThreeColumns;
+const isHorizontal = wideInTwoColumns || wideInThreeColumns;
+---
+
+<article
+  class:list={[
+    'group reveal relative flex flex-col overflow-hidden rounded-lg border border-forest-700/80 bg-forest-900',
+    wideInTwoColumns && 'sm:col-span-2 sm:flex-row',
+    wideInThreeColumns && 'lg:col-span-3 lg:flex-row',
+    narrowAgainInThreeColumns && 'lg:col-span-1 lg:flex-col',
+    layout?.spansTwoOfThreeColumns && 'lg:col-span-2',
+  ]}
+>
+  <div
+    class:list={[
+      'relative aspect-[4/3] overflow-hidden',
+      wideInTwoColumns && 'sm:aspect-auto sm:min-h-72 sm:w-1/2 sm:shrink-0',
+      wideInThreeColumns && 'lg:aspect-auto lg:min-h-80 lg:w-1/2 lg:shrink-0',
+      narrowAgainInThreeColumns && 'lg:aspect-[4/3] lg:min-h-0 lg:w-auto',
+    ]}
+  >
+    <Picture
+      src={resolveImage(image)}
+      alt={imageAlt}
+      formats={['avif', 'webp']}
+      widths={[400, 640, 900]}
+      sizes={isHorizontal ? '(min-width: 640px) 50vw, 100vw' : '(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw'}
+      class="h-full w-full object-cover transition duration-1000 ease-(--ease-soft) group-hover:scale-105"
+    />
+    <div
+      class:list={[
+        'absolute inset-0 bg-gradient-to-t from-forest-900 via-forest-900/10 to-transparent',
+        wideInTwoColumns && 'sm:bg-gradient-to-l',
+        wideInThreeColumns && 'lg:bg-gradient-to-l',
+        narrowAgainInThreeColumns && 'lg:bg-gradient-to-t',
+      ]}
+    >
+    </div>
+    <span class="absolute top-4 left-5 font-display text-lg text-gold-200 italic">{String(number).padStart(2, '0')}</span>
+  </div>
+  <div
+    class:list={[
+      'flex flex-1 flex-col gap-4 p-6 sm:p-7',
+      wideInTwoColumns && 'sm:justify-center sm:p-10',
+      wideInThreeColumns && 'lg:justify-center lg:p-12',
+      narrowAgainInThreeColumns && 'lg:justify-start lg:p-7',
+    ]}
+  >
+    <h3 class="font-display text-3xl leading-tight text-cream">
+      <a href={href} class="after:absolute after:inset-0 focus-visible:outline-none">{title}</a>
+    </h3>
+    <p class:list={['leading-relaxed text-mist', isHorizontal ? 'flex-none sm:max-w-md' : 'flex-1']}>{summary}</p>
+    <span class="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.2em] text-gold-300 uppercase" aria-hidden="true">
+      Szczegóły
+      <svg viewBox="0 0 24 24" class="size-4 transition group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="1.6">
+        <path d="M5 12h14M13 6l6 6-6 6"></path>
+      </svg>
+    </span>
+  </div>
+  <div class="pointer-events-none absolute inset-0 rounded-lg ring-gold-300 ring-inset group-has-[a:focus-visible]:ring-2"></div>
+</article>

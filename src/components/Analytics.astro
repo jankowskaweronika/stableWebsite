@@ -1,0 +1,12 @@
+---
+const measurementId = import.meta.env.PUBLIC_GA_ID?.trim();
+---
+
+{
+  measurementId && (
+    <>
+      <script is:inline src="/scripts/consent-defaults.js" data-ga-id={measurementId} />
+      <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(measurementId)}`} />
+    </>
+  )
+}

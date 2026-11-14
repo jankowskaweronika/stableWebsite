@@ -1,0 +1,62 @@
+#cc-main {
+  --cc-font-family: var(--font-sans);
+  --cc-bg: var(--color-forest-900);
+  --cc-primary-color: var(--color-cream);
+  --cc-secondary-color: var(--color-mist);
+  --cc-link-color: var(--color-gold-300);
+  --cc-btn-primary-bg: var(--color-gold-400);
+  --cc-btn-primary-color: var(--color-night);
+  --cc-btn-primary-border-color: var(--color-gold-400);
+  --cc-btn-primary-hover-bg: var(--color-gold-300);
+  --cc-btn-primary-hover-color: var(--color-night);
+  --cc-btn-primary-hover-border-color: var(--color-gold-300);
+  --cc-btn-secondary-bg: transparent;
+  --cc-btn-secondary-color: var(--color-gold-200);
+  --cc-btn-secondary-border-color: color-mix(in srgb, var(--color-gold-400) 50%, transparent);
+  --cc-btn-secondary-hover-bg: color-mix(in srgb, var(--color-gold-400) 12%, transparent);
+  --cc-btn-secondary-hover-color: var(--color-gold-200);
+  --cc-btn-secondary-hover-border-color: var(--color-gold-300);
+  --cc-btn-border-radius: 999px;
+  --cc-modal-border-radius: 0.75rem;
+  --cc-separator-border-color: var(--color-forest-700);
+  --cc-toggle-on-bg: var(--color-gold-400);
+  --cc-toggle-off-bg: var(--color-forest-700);
+  --cc-toggle-on-knob-bg: var(--color-night);
+  --cc-toggle-off-knob-bg: var(--color-cream);
+  --cc-toggle-enabled-icon-color: var(--color-night);
+  --cc-toggle-disabled-icon-color: var(--color-cream);
+  --cc-toggle-readonly-bg: var(--color-gold-600);
+  --cc-toggle-readonly-knob-bg: var(--color-cream);
+  --cc-toggle-readonly-knob-icon-color: var(--color-gold-600);
+  --cc-section-category-border: var(--color-forest-700);
+  --cc-cookie-category-block-bg: var(--color-forest-950);
+  --cc-cookie-category-block-border: var(--color-forest-700);
+  --cc-cookie-category-block-hover-bg: var(--color-forest-800);
+  --cc-cookie-category-block-hover-border: var(--color-forest-700);
+  --cc-cookie-category-expanded-block-bg: var(--color-forest-950);
+  --cc-cookie-category-expanded-block-hover-bg: var(--color-forest-800);
+  --cc-overlay-bg: rgb(5 8 6 / 0.75);
+  --cc-footer-bg: var(--color-forest-950);
+  --cc-footer-color: var(--color-mist);
+  --cc-footer-border-color: var(--color-forest-700);
+  --cc-webkit-scrollbar-bg: var(--color-forest-700);
+  --cc-webkit-scrollbar-hover-bg: var(--color-gold-600);
+}
+
+#cc-main .cm,
+#cc-main .pm {
+  border: 1px solid color-mix(in srgb, var(--color-gold-400) 30%, transparent);
+}
+
+#cc-main .cm__title,
+#cc-main .pm__title {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+#cc-main .cm__btn,
+#cc-main .pm__btn {
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}

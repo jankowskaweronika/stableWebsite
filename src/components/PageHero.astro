@@ -1,0 +1,42 @@
+---
+import { Picture } from 'astro:assets';
+import { resolveImage } from '../lib/images';
+
+interface Props {
+  eyebrow: string;
+  title: string;
+  lead?: string;
+  image?: string;
+  imageAlt?: string;
+}
+
+const { eyebrow, title, lead, image, imageAlt = '' } = Astro.props;
+---
+
+<section class="relative isolate overflow-hidden pt-36 pb-20 sm:pt-44 sm:pb-28">
+  {
+    image && (
+      <div class="absolute inset-0 -z-10">
+        <Picture
+          src={resolveImage(image)}
+          alt={imageAlt}
+          formats={['avif', 'webp']}
+          widths={[640, 1024, 1600, 2000]}
+          sizes="100vw"
+          loading="eager"
+          fetchpriority="high"
+          class="h-full w-full object-cover opacity-45"
+        />
+        <div class="absolute inset-0 bg-gradient-to-b from-night/70 via-night/60 to-night" />
+      </div>
+    )
+  }
+  <div class="container-page">
+    <p class="eyebrow hero-in">{eyebrow}</p>
+    <h1 class="display hero-in mt-5 max-w-4xl text-5xl sm:text-6xl lg:text-7xl" style="--i:1">
+      <Fragment set:html={title} />
+    </h1>
+    {lead && <p class="hero-in mt-6 max-w-2xl text-lg leading-relaxed text-mist" style="--i:2">{lead}</p>}
+    <div class="gold-rule hero-in mt-10" style="--i:3"></div>
+  </div>
+</section>

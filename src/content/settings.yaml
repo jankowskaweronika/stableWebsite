@@ -1,0 +1,31 @@
+site:
+  name: Stajnia Złota Podkowa
+  tagline: Jazdy konne, pensjonat i hodowla koni w Niedrzwicy Kościelnej
+  description: >-
+    Stajnia Złota Podkowa w Niedrzwicy Kościelnej pod Lublinem — lekcje jazdy konnej,
+    wyjazdy w teren, pensjonat dla koni, hipoterapia, warsztaty i hodowla koni rasy małopolskiej.
+  url: https://stajniazlotapodkowa.pl
+  email: kontakt@stajniazlotapodkowa.pl
+  phone:
+    number: "+48513097988"
+    display: "+48 513 097 988"
+  company:
+    legalName: Małgorzata Jankowska Firma Usługowo-Szkoleniowa
+    registeredAddress: ul. Kandydaty 40, 24-220 Niedrzwica Kościelna
+    nip: "7131505974"
+  address:
+    locality: Niedrzwica Kościelna
+    street: ul. Kandydaty 40
+    postalCode: 24-220
+    postTown: Niedrzwica Duża
+    region: lubelskie
+    country: PL
+  geo:
+    latitude: 51.08853
+    longitude: 22.34570
+  maps:
+    embedUrl: https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2506.0801094366384!2d22.34569511191108!3d51.08852907160298!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4722f16e619fd6ff%3A0x9dbf1152ee612fc!2sStajnia%20Z%C5%82ota%20Podkowa!5e0!3m2!1spl!2spl!4v1712252138066!5m2!1spl!2spl
+    directionsUrl: https://www.google.com/maps/search/?api=1&query=Stajnia+Z%C5%82ota+Podkowa%2C+ul.+Kandydaty+40%2C+24-220+Niedrzwica+Du%C5%BCa
+  socials:
+    facebook: https://www.facebook.com/profile.php?id=100057627093445&locale=pl_PL
+    instagram: https://www.instagram.com/stajnia_zlota_podkowa/

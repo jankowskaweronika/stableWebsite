@@ -1,0 +1,64 @@
+---
+import Wordmark from './Wordmark.astro';
+import SocialLinks from './SocialLinks.astro';
+import { contactLink, mainNavigation } from '../lib/navigation';
+import PostalAddress from './PostalAddress.astro';
+import { getSettings } from '../lib/content';
+
+const site = await getSettings();
+const year = new Date().getFullYear();
+---
+
+<footer class="relative border-t border-gold-500/20 bg-forest-950">
+  <div class="container-page grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1.2fr]">
+    <div class="space-y-5">
+      <a href="/" class="group inline-flex items-center">
+        <Wordmark name={site.name} size="footer" />
+      </a>
+      <p class="max-w-xs text-sm leading-relaxed text-mist">{site.tagline}</p>
+      <SocialLinks socials={site.socials} />
+    </div>
+
+    <nav aria-label="Stopka — strony">
+      <h2 class="eyebrow mb-5">Strony</h2>
+      <ul class="space-y-3 text-sm">
+        {
+          [...mainNavigation, contactLink].map((item) => (
+            <li>
+              <a href={item.href} class="text-mist transition hover:text-gold-200">
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <div>
+      <h2 class="eyebrow mb-5">Kontakt</h2>
+      <address class="space-y-3 text-sm text-mist not-italic">
+        <p><PostalAddress address={site.address} /></p>
+        <p>
+          <a href={`tel:${site.phone.number}`} class="whitespace-nowrap transition hover:text-gold-200">{site.phone.display}</a>
+        </p>
+        <p>
+          <a href={`mailto:${site.email}`} class="transition hover:text-gold-200">{site.email}</a>
+        </p>
+      </address>
+    </div>
+  </div>
+
+  <div class="border-t border-forest-800">
+    <div class="container-page flex flex-col gap-3 py-6 text-xs text-stone-muted sm:flex-row sm:items-center sm:justify-between">
+      <p>© {year} {site.name}. Wszelkie prawa zastrzeżone.</p>
+      <ul class="flex flex-wrap gap-x-6 gap-y-2">
+        <li><a href="/polityka-prywatnosci/" class="transition hover:text-gold-200">Polityka prywatności</a></li>
+        <li>
+          <button type="button" data-cc="show-preferencesModal" class="cursor-pointer transition hover:text-gold-200">
+            Ustawienia cookies
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,48 @@
+home:
+  hero:
+    eyebrow: Niedrzwica Kościelna · Lubelszczyzna
+    lead: >-
+      Zapraszamy na niezapomniane jazdy konne, malownicze wyjazdy w teren i inspirujące
+      warsztaty w siodle. Tworzymy miejsce, gdzie pasja do koni łączy się z naturą
+      i profesjonalizmem.
+    image: las.jpg
+    imageAlt: Grupa jeźdźców podczas jesiennego wyjazdu w teren leśną drogą
+  about:
+    title: O nas
+    items:
+      - title: Pasja i profesjonalizm
+        description: >-
+          Stadnina Złota Podkowa powstała z miłości do koni i jeździectwa. Nasz zespół tworzą
+          doświadczeni instruktorzy, którzy łączą wieloletnie doświadczenie z nieustannym
+          rozwojem umiejętności. Szczególną uwagę przykładamy do indywidualnego podejścia do
+          każdego konia i jeźdźca, budując relacje oparte na wzajemnym zaufaniu i szacunku.
+        image: euforia.jpeg
+        imageAlt: Jeźdźczyni na ciemnym koniu na ujeżdżalni przy drewnianym ogrodzeniu
+      - title: Blisko natury
+        description: >-
+          Nasza stadnina położona jest w malowniczej okolicy Niedrzwicy Kościelnej, otoczona
+          rozległymi polami i lasami. To wyjątkowe miejsce, gdzie nasze konie mogą cieszyć się
+          swobodą na przestronnych pastwiskach, a jeźdźcy odkrywać piękno przyrody podczas
+          jazd terenowych.
+        image: pastwisko.jpeg
+        imageAlt: Klacze ze źrebięciem pasące się na zielonym pastwisku przy lesie
+      - title: Profesjonalna hodowla i sukcesy sportowe
+        description: >-
+          Z pasją zajmujemy się hodowlą koni, dbając o ich zdrowie, kondycję i odpowiednie
+          przygotowanie do sportu i rekreacji. Nasze konie wyróżniają się doskonałym
+          charakterem i pochodzeniem, a także odnoszą sukcesy na czempionatach i zawodach.
+        image: bialka-show.jpeg
+        imageAlt: Dwie zawodniczki z numerami startowymi prezentują ciemne konie na czempionacie
+  gallery:
+    - image: artemida.jpeg
+      alt: Ciemnogniady koń z flo za zajęte miejsce prowadzony przez opiekunkę
+    - image: teren.jpeg
+      alt: Dwoje jeźdźców stępem na ściernisku na tle lasu
+    - image: pamela.jpg
+      alt: Kasztanowaty koń z łysiną i chłopiec w kowbojskim kapeluszu
+    - image: zawody.jpeg
+      alt: Jeźdźczyni galopująca na gniadym koniu po piaszczystym placu
+    - image: bialka.jpg
+      alt: Koń prezentowany w ręku na trawie przed kamiennym budynkiem stajni
+    - image: agata.jpg
+      alt: Jeźdźczyni na srokatym koniu odwrócona tyłem, w tle jesienny las

@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import PriceCategory from '../components/PriceCategory.astro';
+import ContactCta from '../components/ContactCta.astro';
+import { getPriceCategories } from '../lib/content';
+
+const categories = await getPriceCategories();
+---
+
+<BaseLayout
+  title="Cennik"
+  description="Cennik Stajni Złota Podkowa: jazdy indywidualne, hipoterapia, wyjazdy w teren, pensjonat dla koni, imprezy, sesje zdjęciowe i warsztaty jeździeckie."
+  image="zawody.jpeg"
+>
+  <PageHero
+    eyebrow="Cennik"
+    title="Przejrzyste ceny, <em class='text-gold-200'>bez niespodzianek</em>"
+    lead="Aktualne ceny naszych zajęć i usług. W razie pytań o terminy lub usługi wyceniane indywidualnie — zadzwoń, chętnie doradzimy."
+    image="zawody.jpeg"
+    imageAlt="Jeźdźczyni galopująca na gniadym koniu po piaszczystym placu"
+  />
+
+  <div class="container-page pb-24">
+    <nav aria-label="Kategorie cennika" class="mb-6">
+      <ul class="flex flex-wrap gap-2">
+        {
+          categories.map((category) => (
+            <li>
+              <a
+                href={`#${category.id}`}
+                class="inline-flex min-h-10 items-center rounded-full border border-forest-700 px-4 text-sm text-mist transition hover:border-gold-400 hover:text-gold-200"
+              >
+                {category.data.title}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+    {
+      categories.map((category, index) => (
+        <PriceCategory
+          id={category.id}
+          title={category.data.title}
+          intro={category.data.intro}
+          items={category.data.items}
+          extras={category.data.extras}
+          index={index + 1}
+        />
+      ))
+    }
+  </div>
+
+  <ContactCta title="Masz pytania o ceny?" text="Opowiedz nam, czego szukasz — przygotujemy propozycję dopasowaną do Ciebie." />
+</BaseLayout>

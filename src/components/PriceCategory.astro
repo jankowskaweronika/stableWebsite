@@ -1,0 +1,65 @@
+---
+import { INDIVIDUAL_PRICE_LABEL, formatPrice } from '../lib/content';
+
+interface PriceItem {
+  name: string;
+  description?: string | undefined;
+  price?: number | undefined;
+  unit?: string | undefined;
+  note?: string | undefined;
+}
+
+interface Props {
+  id: string;
+  title: string;
+  intro?: string | undefined;
+  items: PriceItem[];
+  extras?: PriceItem[] | undefined;
+  index: number;
+}
+
+const { id, title, intro, items, extras = [], index } = Astro.props;
+const priceGroups = [
+  { heading: undefined, items },
+  { heading: 'Usługi dodatkowe (płatne osobno)', items: extras },
+].filter((group) => group.items.length > 0);
+---
+
+<section id={id} aria-labelledby={`${id}-title`} class="reveal scroll-mt-28 border-t border-gold-500/20 py-12 sm:py-14">
+  <div class="grid gap-8 lg:grid-cols-[18rem_1fr] lg:gap-16">
+    <div>
+      <span class="font-display text-lg text-gold-400 italic">{String(index).padStart(2, '0')}</span>
+      <h2 id={`${id}-title`} class="display mt-2 text-4xl">{title}</h2>
+      {intro && <p class="mt-4 text-mist">{intro}</p>}
+    </div>
+    <div class="space-y-10">
+      {
+        priceGroups.map((group) => (
+          <div>
+            {group.heading && <h3 class="eyebrow mb-4">{group.heading}</h3>}
+            <ul class="divide-y divide-forest-800">
+              {group.items.map((item) => (
+                <li class="flex flex-col gap-2 py-5 first:pt-0 sm:flex-row sm:items-baseline sm:gap-6">
+                  <div class="flex-1">
+                    <p class="text-lg font-semibold text-cream">{item.name}</p>
+                    {item.description && <p class="mt-1 text-sm text-mist">{item.description}</p>}
+                    {item.note && <p class="mt-2 text-sm text-stone-muted">{item.note}</p>}
+                  </div>
+                  <span class="hidden flex-1 translate-y-[-0.3em] border-b border-dotted border-gold-500/30 sm:block" aria-hidden="true" />
+                  <p class="sm:min-w-44 sm:text-right">
+                    {item.price === undefined ? (
+                      <span class="font-display text-xl text-gold-200 italic">{INDIVIDUAL_PRICE_LABEL}</span>
+                    ) : (
+                      <span class="font-display text-3xl whitespace-nowrap text-gold-200">{formatPrice(item.price)}</span>
+                    )}
+                    {item.unit && <span class="block text-xs tracking-wide text-stone-muted">/ {item.unit}</span>}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

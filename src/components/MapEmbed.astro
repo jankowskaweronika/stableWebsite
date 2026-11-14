@@ -1,0 +1,36 @@
+---
+import { getSettings } from '../lib/content';
+
+const site = await getSettings();
+---
+
+<div class="space-y-4">
+  <div
+    class="relative aspect-[4/3] overflow-hidden rounded-lg border border-forest-700 bg-forest-900 sm:aspect-[16/10]"
+    data-map
+    data-map-src={site.maps.embedUrl}
+    data-map-title={`Mapa dojazdu — ${site.name}`}
+  >
+    <div class="absolute inset-0 grid place-items-center p-6 text-center" data-map-placeholder>
+      <div class="max-w-sm space-y-4">
+        <svg viewBox="0 0 24 24" class="mx-auto size-10 text-gold-400" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+          <path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"></path>
+          <circle cx="12" cy="9.5" r="2.5"></circle>
+        </svg>
+        <p class="text-sm text-mist">
+          Mapa jest dostarczana przez Google. Po jej wyświetleniu Google może zapisać pliki cookies — klikając przycisk, wyrażasz
+          zgodę na kategorię „Mapy”.
+        </p>
+        <button type="button" class="btn-ghost" data-map-load>Pokaż mapę</button>
+      </div>
+    </div>
+  </div>
+  <a href={site.maps.directionsUrl} target="_blank" rel="noopener noreferrer" class="link-gold inline-flex items-center gap-2 text-sm">
+    Jak dojechać — otwórz w Google Maps<span class="sr-only"> (otwiera się w nowej karcie)</span>
+  </a>
+</div>
+
+<script>
+  import { initMapEmbed } from '../scripts/map-embed';
+  initMapEmbed();
+</script>

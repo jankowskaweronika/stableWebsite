@@ -1,0 +1,245 @@
+- id: 2026-czempionat-encanto
+  date: 2026-06-13
+  horse: Encanto
+  event: XXIX Narodowy Młodzieżowy Czempionat Koni Rasy Małopolskiej, Stadnina Koni Białka
+  classNumber: III
+  category: Ogiery dwuletnie
+  result: 71,45 pkt
+  scores:
+    - group: Ocena w ręku
+      total: '29,25'
+      items:
+        - { label: Typ, value: '7,50 (×1,5 = 11,25)' }
+        - { label: 'Głowa, szyja, kłoda', value: '7,30' }
+        - { label: Nogi i kopyta, value: '7,13 (×1,5 = 10,70)' }
+    - group: Ruch luzem
+      total: '42,20'
+      items:
+        - { label: Galop, value: '7,00 (×1,75 = 12,25)' }
+        - { label: Kłus, value: '6,97 (×1,25 = 8,71)' }
+        - { label: Skoki, value: '7,13 (×2 = 14,27)' }
+        - { label: Stęp w ręku, value: '6,97' }
+  url: https://www.lzhk.pl/2026/06/15/wyniki-29-narodowy-mlodziezowy-czempionat-koni-rasy-malopolskiej/
+  protocolUrl: https://www.lzhk.pl/wp-content/uploads/2026/06/Klasa-III-ogiery-dwuletnie.pdf
+- id: 2025-czempionat-kili-boy
+  date: 2025-06-14
+  horse: Kili Boy AA
+  event: XXVIII Narodowy Młodzieżowy Czempionat Koni Rasy Małopolskiej, Stadnina Koni Białka
+  classNumber: V
+  category: Ogiery starsze
+  result: 70,53 pkt
+  scores:
+    - group: Ocena w ręku
+      total: '30,23'
+      items:
+        - { label: Typ, value: '7,40 (×1,5 = 11,10)' }
+        - { label: 'Głowa, szyja, kłoda', value: '7,43' }
+        - { label: Nogi i kopyta, value: '7,80 (×1,5 = 11,70)' }
+    - group: Ruch luzem
+      total: '40,30'
+      items:
+        - { label: Galop, value: '6,63 (×1,75 = 11,61)' }
+        - { label: Kłus, value: '5,97 (×1,25 = 7,46)' }
+        - { label: Skoki, value: '7,10 (×2 = 14,20)' }
+        - { label: Stęp w ręku, value: '7,03' }
+  url: https://www.lzhk.pl/2025/06/16/28-narodowy-mlodziezowy-czempionat-koni-rasy-malopolskiej-wyniki/
+  protocolUrl: https://www.lzhk.pl/wp-content/uploads/2025/06/Protokol-2025-kl.V.pdf
+- id: 2025-czempionat-encanto
+  date: 2025-06-14
+  horse: Encanto
+  event: XXVIII Narodowy Młodzieżowy Czempionat Koni Rasy Małopolskiej, Stadnina Koni Białka
+  classNumber: I
+  category: Ogiery roczne
+  result: 70,25 pkt
+  scores:
+    - group: Ocena w ręku
+      total: '30,80'
+      items:
+        - { label: Typ, value: '7,70 (×1,5 = 11,55)' }
+        - { label: 'Głowa, szyja, kłoda', value: '7,80' }
+        - { label: Nogi i kopyta, value: '7,63 (×1,5 = 11,45)' }
+    - group: Ruch luzem
+      total: '39,45'
+      items:
+        - { label: Galop, value: '6,60 (×2,5 = 16,50)' }
+        - { label: Kłus, value: '6,50 (×2,5 = 16,25)' }
+        - { label: Stęp w ręku, value: '6,70' }
+  url: https://www.lzhk.pl/2025/06/16/28-narodowy-mlodziezowy-czempionat-koni-rasy-malopolskiej-wyniki/
+  protocolUrl: https://www.lzhk.pl/wp-content/uploads/2025/06/Protokol-2025-Strona-Int..pdf
+- id: 2025-czempionat-el-bili
+  date: 2025-06-14
+  horse: El Bili AA
+  event: XXVIII Narodowy Młodzieżowy Czempionat Koni Rasy Małopolskiej, Stadnina Koni Białka
+  classNumber: V
+  category: Ogiery starsze
+  result: 64,24 pkt
+  scores:
+    - group: Ocena w ręku
+      total: '27,07'
+      items:
+        - { label: Typ, value: '7,30 (×1,5 = 10,95)' }
+        - { label: 'Głowa, szyja, kłoda', value: '7,07' }
+        - { label: Nogi i kopyta, value: '6,03 (×1,5 = 9,05)' }
+    - group: Ruch luzem
+      total: '37,17'
+      items:
+        - { label: Galop, value: '6,23 (×1,75 = 10,91)' }
+        - { label: Kłus, value: '6,37 (×1,25 = 7,96)' }
+        - { label: Skoki, value: '6,17 (×2 = 12,33)' }
+        - { label: Stęp w ręku, value: '5,97' }
+  url: https://www.lzhk.pl/2025/06/16/28-narodowy-mlodziezowy-czempionat-koni-rasy-malopolskiej-wyniki/
+  protocolUrl: https://www.lzhk.pl/wp-content/uploads/2025/06/Protokol-2025-kl.V.pdf
+- id: 2024-czempionat-el-bili
+  date: 2024-06-15
+  horse: El Bili AA
+  event: XXVII Narodowy Młodzieżowy Czempionat Koni Rasy Małopolskiej, Stadnina Koni Białka
+  classNumber: III
+  category: Ogiery dwuletnie
+  result: 79,64 pkt
+  url: https://www.lzhk.pl/2024/06/17/xxvii-narodowy-mlodziezowy-czempionat-koni-rasy-malopolskiej-wyniki/
+  protocolUrl: https://www.lzhk.pl/wp-content/uploads/2024/06/Czempionat-m-2024-kl.-III.pdf
+- id: 2024-czempionat-kili-boy
+  date: 2024-06-15
+  horse: Kili Boy AA
+  event: XXVII Narodowy Młodzieżowy Czempionat Koni Rasy Małopolskiej, Stadnina Koni Białka
+  classNumber: III
+  category: Ogiery dwuletnie
+  result: 78,13 pkt
+  url: https://www.lzhk.pl/2024/06/17/xxvii-narodowy-mlodziezowy-czempionat-koni-rasy-malopolskiej-wyniki/
+  protocolUrl: https://www.lzhk.pl/wp-content/uploads/2024/06/Czempionat-m-2024-kl.-III.pdf
+- id: 2022-czempionat-evira
+  date: 2022-06-11
+  horse: Evira
+  event: XXV Narodowy Młodzieżowy Czempionat Koni Rasy Małopolskiej, Stadnina Koni Białka
+  classNumber: V
+  category: Klacze trzyletnie
+  result: 80,90 pkt
+  title: Wiceczempionka klaczy
+  featured: true
+  scores:
+    - group: Ocena w ręku
+      total: '41,65'
+      items:
+        - { label: Typ, value: '8,83 (×1,5 = 13,25)' }
+        - { label: 'Głowa, szyja, kłoda', value: '8,83' }
+        - { label: Nogi i kopyta, value: '7,83 (×1,5 = 11,75)' }
+        - { label: Stęp w ręku, value: '7,83' }
+    - group: Skoki luzem
+      total: '39,25'
+      items: []
+  url: https://www.lzhk.pl/czempionaty/
+  protocolUrl: https://www.lzhk.pl/wp-content/uploads/2022/05/Protokol-Czempionat-2022-wyniki.pdf
+- id: 2022-czempionat-elenka
+  date: 2022-06-11
+  horse: Elenka
+  event: XXV Narodowy Młodzieżowy Czempionat Koni Rasy Małopolskiej, Stadnina Koni Białka
+  classNumber: V
+  category: Klacze trzyletnie
+  result: 76,49 pkt
+  scores:
+    - group: Ocena w ręku
+      total: '38,74'
+      items:
+        - { label: Typ, value: '7,83 (×1,5 = 11,75)' }
+        - { label: 'Głowa, szyja, kłoda', value: '7,83' }
+        - { label: Nogi i kopyta, value: '7,33 (×1,5 = 11,00)' }
+        - { label: Stęp w ręku, value: '8,17' }
+    - group: Skoki luzem
+      total: '37,75'
+      items: []
+  url: https://www.lzhk.pl/czempionaty/
+  protocolUrl: https://www.lzhk.pl/wp-content/uploads/2022/05/Protokol-Czempionat-2022-wyniki.pdf
+- id: 2021-czempionat-evira
+  date: 2021-06-12
+  horse: Evira
+  event: XXIV Narodowy Młodzieżowy Czempionat Koni Rasy Małopolskiej, Stadnina Koni Białka
+  classNumber: IV
+  category: Klacze dwuletnie
+  result: 76,41 pkt
+  scores:
+    - group: Ocena w ręku
+      total: '38,91'
+      items:
+        - { label: Typ, value: '8,50 (×1,5 = 12,75)' }
+        - { label: 'Głowa, szyja, kłoda', value: '8,33' }
+        - { label: Nogi i kopyta, value: '7,00 (×1,5 = 10,50)' }
+        - { label: Stęp w ręku, value: '7,33' }
+    - group: Skoki luzem
+      total: '37,50'
+      items:
+        - { label: Galop (sędzia ujeżdżeniowy), value: '7,5' }
+        - { label: Kłus (sędzia ujeżdżeniowy), value: '7,5 (×1,5 = 11,25)' }
+        - { label: Galop (sędzia skokowy), value: '7,5' }
+        - { label: Skoki (sędzia skokowy), value: '7,5 (×1,5 = 11,25)' }
+  url: https://www.lzhk.pl/2021/06/15/wyniki-xxiv-narodowego-mlodziezowego-czempionatu-koni-malopolskich-w-bialce/
+  protocolUrl: https://www.pzhk.pl/wp-content/uploads/czempionat-malopolski-2021-klasa-4.pdf
+- id: 2021-czempionat-elenka
+  date: 2021-06-12
+  horse: Elenka
+  event: XXIV Narodowy Młodzieżowy Czempionat Koni Rasy Małopolskiej, Stadnina Koni Białka
+  classNumber: IV
+  category: Klacze dwuletnie
+  result: 75,33 pkt
+  scores:
+    - group: Ocena w ręku
+      total: '37,08'
+      items:
+        - { label: Typ, value: '7,50 (×1,5 = 11,25)' }
+        - { label: 'Głowa, szyja, kłoda', value: '7,50' }
+        - { label: Nogi i kopyta, value: '7,00 (×1,5 = 10,50)' }
+        - { label: Stęp w ręku, value: '7,83' }
+    - group: Skoki luzem
+      total: '38,25'
+      items:
+        - { label: Galop (sędzia ujeżdżeniowy), value: '7,5' }
+        - { label: Kłus (sędzia ujeżdżeniowy), value: '7,5 (×1,5 = 11,25)' }
+        - { label: Galop (sędzia skokowy), value: '7,5' }
+        - { label: Skoki (sędzia skokowy), value: '8,0 (×1,5 = 12,00)' }
+  url: https://www.lzhk.pl/2021/06/15/wyniki-xxiv-narodowego-mlodziezowego-czempionatu-koni-malopolskich-w-bialce/
+  protocolUrl: https://www.pzhk.pl/wp-content/uploads/czempionat-malopolski-2021-klasa-4.pdf
+- id: 2020-czempionat-evira
+  date: 2020-07-18
+  horse: Evira
+  event: XXIII Narodowy Młodzieżowy Czempionat Koni Rasy Małopolskiej, Stadnina Koni Białka
+  classNumber: II
+  category: Klacze roczne
+  result: 76,42 pkt
+  scores:
+    - group: Ocena w ręku
+      total: '40,67'
+      items:
+        - { label: Typ, value: '8,33 (×1,5 = 12,50)' }
+        - { label: 'Głowa, szyja, kłoda', value: '8,00' }
+        - { label: Nogi i kopyta, value: '8,00 (×1,5 = 12,00)' }
+        - { label: Stęp w ręku, value: '8,17' }
+    - group: Ruch luzem
+      total: '35,75'
+      items:
+        - { label: Galop (suma ocen 2 sędziów), value: '14,50 (×1,5 = 21,75)' }
+        - { label: Kłus (suma ocen 2 sędziów), value: '14,00' }
+  sourceLabel: PZHK
+  url: https://www.pzhk.pl/2020/07/xxiii-narodowy-mlodziezowy-czempionat-koni-rasy-malopolskiej-wyniki/
+  protocolUrl: https://www.pzhk.pl/wp-content/uploads/czempionat-malopolski-2020-klasa-2.pdf
+- id: 2020-czempionat-elenka
+  date: 2020-07-18
+  horse: Elenka
+  event: XXIII Narodowy Młodzieżowy Czempionat Koni Rasy Małopolskiej, Stadnina Koni Białka
+  classNumber: II
+  category: Klacze roczne
+  result: 73,16 pkt
+  scores:
+    - group: Ocena w ręku
+      total: '37,41'
+      items:
+        - { label: Typ, value: '8,00 (×1,5 = 12,00)' }
+        - { label: 'Głowa, szyja, kłoda', value: '7,83' }
+        - { label: Nogi i kopyta, value: '6,83 (×1,5 = 10,25)' }
+        - { label: Stęp w ręku, value: '7,33' }
+    - group: Ruch luzem
+      total: '35,75'
+      items:
+        - { label: Galop (suma ocen 2 sędziów), value: '14,50 (×1,5 = 21,75)' }
+        - { label: Kłus (suma ocen 2 sędziów), value: '14,00' }
+  sourceLabel: PZHK
+  url: https://www.pzhk.pl/2020/07/xxiii-narodowy-mlodziezowy-czempionat-koni-rasy-malopolskiej-wyniki/
+  protocolUrl: https://www.pzhk.pl/wp-content/uploads/czempionat-malopolski-2020-klasa-2.pdf

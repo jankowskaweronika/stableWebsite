@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import OfferDetails from '../components/OfferDetails.astro';
+import ContactCta from '../components/ContactCta.astro';
+import { getOffer } from '../lib/content';
+
+const offer = await getOffer('sesje-zdjeciowe');
+---
+
+<BaseLayout title={offer.data.title} description={offer.data.summary} image={offer.data.image}>
+  <PageHero
+    eyebrow="Sesje zdjęciowe"
+    title="Kadry pełne <em class='text-gold-200'>końskiej elegancji</em>"
+    lead={offer.data.summary}
+    image="artemida.jpeg"
+    imageAlt="Ciemnogniady koń z flo prowadzony przez opiekunkę na tle zieleni"
+  />
+  <OfferDetails
+    offerId="sesje-zdjeciowe"
+    priceCategoryId="sesje-zdjeciowe"
+    includedTitle="Co obejmuje sesja"
+    galleryTitle="Przykładowe zdjęcia"
+    topic="sesja-zdjeciowa"
+    ctaLabel="Zapytaj o sesję"
+  />
+  <ContactCta title="Zarezerwuj sesję" text="Napisz, jaką sesję planujesz — szczegóły i cenę ustalimy indywidualnie." topic="sesja-zdjeciowa" />
+</BaseLayout>

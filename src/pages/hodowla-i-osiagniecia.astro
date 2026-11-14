@@ -1,0 +1,88 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import HorseCard from '../components/HorseCard.astro';
+import AchievementDetails from '../components/AchievementDetails.astro';
+import AchievementSources from '../components/AchievementSources.astro';
+import ContactCta from '../components/ContactCta.astro';
+import { formatDate, getAchievements, getHorseGroups, toIsoDate } from '../lib/content';
+
+const horseGroups = await getHorseGroups();
+const achievements = await getAchievements();
+const achievementsByYear = Map.groupBy(achievements, (achievement) => achievement.data.date.getFullYear());
+---
+
+<BaseLayout
+  title="Hodowla i osiągnięcia"
+  description="Hodowla koni rasy małopolskiej w Stajni Złota Podkowa — profile naszych koni i wyniki z czempionatów."
+  image="bialka-show.jpeg"
+>
+  <PageHero
+    eyebrow="Hodowla i osiągnięcia"
+    title="Charakter, pochodzenie, <em class='text-gold-200'>sukcesy</em>"
+    lead="Z pasją zajmujemy się hodowlą koni, dbając o ich zdrowie, kondycję i odpowiednie przygotowanie do sportu i rekreacji."
+    image="bialka-show.jpeg"
+    imageAlt="Dwie zawodniczki z numerami startowymi prezentują ciemne konie na czempionacie"
+  />
+
+  <section aria-labelledby="nasze-konie" class="container-page py-20">
+    <SectionHeading id="nasze-konie" index="I." eyebrow="Hodowla" title="Nasze konie" />
+    <div class="mt-12 space-y-14">
+      {
+        horseGroups.map((group) => (
+          <div>
+            <h3 class="font-display text-3xl text-gold-400 italic">{group.label}</h3>
+            <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {group.horses.map((horse) => (
+                <HorseCard {...horse.data} headingLevel="h4" />
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section aria-labelledby="osiagniecia" class="bg-forest-950 py-20">
+    <div class="container-page">
+      <SectionHeading id="osiagniecia" index="II." eyebrow="Osiągnięcia" title="Wyniki na czempionatach i zawodach" />
+      <div class="mt-12 space-y-14">
+        {
+          [...achievementsByYear].map(([year, entries]) => (
+            <div class="reveal grid gap-6 lg:grid-cols-[10rem_1fr]">
+              <h3 class="font-display text-5xl text-gold-400 italic">{year}</h3>
+              <ol class="relative space-y-4 border-l border-gold-500/30 pl-8">
+                {entries.map((achievement) => (
+                  <li
+                    class:list={[
+                      'relative rounded-lg border bg-forest-900/70 p-6',
+                      achievement.data.featured ? 'border-gold-500/60' : 'border-forest-700/80',
+                    ]}
+                  >
+                    <span class="absolute top-8 -left-[2.3rem] size-3 rotate-45 border border-gold-400 bg-night" aria-hidden="true" />
+                    <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                      <div>
+                        <time datetime={toIsoDate(achievement.data.date)} class="eyebrow text-[0.65rem]">
+                          {formatDate(achievement.data.date)}
+                        </time>
+                        <p class="mt-2 font-display text-2xl text-cream">{achievement.data.horse}</p>
+                        {achievement.data.title && <p class="mt-1 font-semibold text-gold-200">{achievement.data.title}</p>}
+                        <p class="text-mist">{achievement.data.event}</p>
+                      </div>
+                      <p class="font-display text-4xl whitespace-nowrap text-gold-200">{achievement.data.result}</p>
+                    </div>
+                    <AchievementDetails {...achievement.data} />
+                    <AchievementSources {...achievement.data} class="mt-4 text-sm" />
+                  </li>
+                ))}
+              </ol>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <ContactCta title="Interesują Cię nasze konie?" text="Zapytaj o szczegóły hodowli, pochodzenie lub możliwość obejrzenia koni na miejscu." />
+</BaseLayout>

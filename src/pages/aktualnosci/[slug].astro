@@ -1,0 +1,61 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { Picture } from 'astro:assets';
+import { render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContactCta from '../../components/ContactCta.astro';
+import { formatDate, getPublishedNews, toIsoDate } from '../../lib/content';
+import { resolveImage } from '../../lib/images';
+
+export const getStaticPaths = (async () => {
+  const news = await getPublishedNews();
+  return news.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}) satisfies GetStaticPaths;
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<BaseLayout title={post.data.title} description={post.data.excerpt} image={post.data.image} type="article" publishedTime={post.data.date}>
+  <article class="pt-36 pb-24 sm:pt-44">
+    <header class="container-page max-w-4xl">
+      <a href="/aktualnosci/" class="link-gold text-sm">← Wszystkie aktualności</a>
+      <time datetime={toIsoDate(post.data.date)} class="eyebrow hero-in mt-10 block">{formatDate(post.data.date)}</time>
+      <h1 class="display hero-in mt-5 text-4xl sm:text-5xl lg:text-6xl" style="--i:1">{post.data.title}</h1>
+      <div class="gold-rule hero-in mt-8" style="--i:2"></div>
+    </header>
+    {
+      post.data.image && (
+        <div class="container-page mt-12 max-w-5xl">
+          <div class="aspect-[16/9] overflow-hidden rounded-lg">
+            <Picture
+              src={resolveImage(post.data.image)}
+              alt={post.data.imageAlt ?? ''}
+              formats={['avif', 'webp']}
+              widths={[640, 1024, 1400]}
+              sizes="(min-width: 1024px) 64rem, 100vw"
+              loading="eager"
+              class="h-full w-full object-cover"
+            />
+          </div>
+        </div>
+      )
+    }
+    <div class="container-page mt-12 max-w-3xl">
+      <div class="prose-stable">
+        <Content />
+      </div>
+      {
+        post.data.link && (
+          <p class="mt-10">
+            <a href={post.data.link.url} target="_blank" rel="noopener noreferrer" class="btn-ghost">
+              {post.data.link.label}
+              <span class="sr-only"> (otwiera się w nowej karcie)</span>
+            </a>
+          </p>
+        )
+      }
+    </div>
+  </article>
+  <ContactCta />
+</BaseLayout>

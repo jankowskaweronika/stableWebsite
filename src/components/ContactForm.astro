@@ -1,0 +1,87 @@
+---
+import { CONTACT_FORM_ENDPOINT, FORM_ERROR_ANCHOR, contactTopics } from '../lib/contact';
+import { getSettings } from '../lib/content';
+
+const site = await getSettings();
+const labelClass = 'mb-2 block text-sm font-medium text-cream';
+---
+
+<form
+  id="formularz"
+  action={CONTACT_FORM_ENDPOINT}
+  method="POST"
+  class="scroll-mt-28 space-y-6"
+  data-contact-form
+  aria-describedby="formularz-status"
+>
+  <input type="hidden" name="form_started_at" value="" data-started-at />
+  <div class="hidden" aria-hidden="true">
+    <label>Strona internetowa (nie wypełniaj) <input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+  </div>
+
+  <p
+    id={FORM_ERROR_ANCHOR}
+    role="alert"
+    class="hidden scroll-mt-32 rounded-md border border-red-400/60 bg-red-500/10 p-4 text-sm text-red-200 target:block"
+  >
+    Nie udało się wysłać wiadomości — sprawdź, czy wszystkie wymagane pola są poprawnie wypełnione, i spróbuj ponownie. Możesz też
+    zadzwonić: <span class="whitespace-nowrap">{site.phone.display}</span>.
+  </p>
+
+  <div class="grid gap-6 sm:grid-cols-2">
+    <div>
+      <label for="cf-name" class={labelClass}>Imię i nazwisko <span class="text-gold-300">*</span></label>
+      <input id="cf-name" name="name" type="text" required autocomplete="name" maxlength="120" class="field" />
+    </div>
+    <div>
+      <label for="cf-contact" class={labelClass}>E-mail lub telefon <span class="text-gold-300">*</span></label>
+      <input id="cf-contact" name="contact" type="text" required autocomplete="email" maxlength="160" class="field" />
+    </div>
+  </div>
+
+  <div>
+    <label for="cf-topic" class={labelClass}>Temat <span class="text-gold-300">*</span></label>
+    <select id="cf-topic" name="topic" required class="field appearance-none" data-topic-select>
+      {contactTopics.map((topic) => <option value={topic.value}>{topic.label}</option>)}
+    </select>
+  </div>
+
+  <div>
+    <label for="cf-message" class={labelClass}>Wiadomość <span class="text-gold-300">*</span></label>
+    <textarea id="cf-message" name="message" required rows="6" maxlength="5000" class="field resize-y"></textarea>
+  </div>
+
+  <div class="space-y-4 rounded-md border border-forest-700 bg-forest-950/60 p-5 text-sm leading-relaxed text-mist">
+    <p id="cf-rodo-info">
+      Administratorem Twoich danych osobowych jest {site.company.legalName}.
+      Dane z formularza przetwarzamy wyłącznie w celu odpowiedzi na Twoją wiadomość (art. 6 ust. 1 lit. b i f RODO). Wiadomość
+      trafia e-mailem na naszą skrzynkę za pośrednictwem serwera hostingu strony. Szczegóły, w tym Twoje prawa, opisujemy w{' '}
+      <a href="/polityka-prywatnosci/" class="link-gold">polityce prywatności</a>.
+    </p>
+    <label class="flex cursor-pointer items-start gap-3 text-cream">
+      <input
+        type="checkbox"
+        name="consent"
+        value="Tak"
+        required
+        aria-describedby="cf-rodo-info"
+        class="mt-1 size-5 shrink-0 accent-gold-400"
+      />
+      <span>Zapoznałem/-am się z informacją o przetwarzaniu danych osobowych. <span class="text-gold-300">*</span></span>
+    </label>
+  </div>
+
+  <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
+    <button type="submit" class="btn-gold disabled:cursor-wait disabled:opacity-60" data-submit>
+      Wyślij wiadomość
+    </button>
+    <p class="text-xs text-stone-muted">Pola oznaczone * są wymagane.</p>
+  </div>
+
+  <p id="formularz-status" role="status" aria-live="polite" class="hidden rounded-md p-4 text-sm" data-form-status></p>
+</form>
+
+<script>
+  import { initContactForm } from '../scripts/contact-form';
+  initContactForm();
+</script>

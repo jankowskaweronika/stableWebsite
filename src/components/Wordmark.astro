@@ -1,0 +1,20 @@
+---
+interface Props {
+  name: string;
+  size?: 'header' | 'footer';
+}
+
+const { name, size = 'header' } = Astro.props;
+const firstSpaceIndex = name.indexOf(' ');
+const leadingWord = firstSpaceIndex === -1 ? name : name.slice(0, firstSpaceIndex);
+const accentWords = firstSpaceIndex === -1 ? '' : name.slice(firstSpaceIndex + 1);
+const leadingText = accentWords ? `${leadingWord} ` : leadingWord;
+---
+
+<span
+  class:list={[
+    'font-display leading-none tracking-[0.01em] text-cream transition group-hover:text-gold-200',
+    size === 'footer' ? 'text-3xl' : 'text-[1.4rem] sm:text-[1.65rem] lg:text-2xl xl:text-[1.75rem]',
+  ]}
+  >{leadingText}{accentWords && <em class="font-medium text-gold-200 italic">{accentWords}</em>}</span
+>

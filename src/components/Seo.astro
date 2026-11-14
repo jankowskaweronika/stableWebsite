@@ -1,0 +1,83 @@
+---
+import { getImage } from 'astro:assets';
+import { getSettings } from '../lib/content';
+import { resolveImage } from '../lib/images';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: 'website' | 'article';
+  noindex?: boolean;
+  publishedTime?: Date;
+}
+
+const { title, description, image, type = 'website', noindex = false, publishedTime } = Astro.props;
+const site = await getSettings();
+
+const fullTitle = title ? `${title} | ${site.name}` : `${site.name} — ${site.tagline}`;
+const metaDescription = description ?? site.description;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+
+const ogImage = await getImage({
+  src: resolveImage(image ?? 'las.jpg'),
+  width: 1200,
+  height: 630,
+  fit: 'cover',
+  format: 'jpg',
+});
+const ogImageUrl = new URL(ogImage.src, Astro.site).href;
+
+const localBusiness = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': `${site.url}/#stajnia`,
+  name: site.name,
+  description: site.description,
+  url: site.url,
+  image: ogImageUrl,
+  logo: new URL('/icon-512.png', Astro.site).href,
+  telephone: site.phone.number,
+  email: `mailto:${site.email}`,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: `${site.address.locality}, ${site.address.street}`,
+    addressLocality: site.address.postTown,
+    postalCode: site.address.postalCode,
+    addressRegion: site.address.region,
+    addressCountry: site.address.country,
+  },
+  geo: { '@type': 'GeoCoordinates', latitude: site.geo.latitude, longitude: site.geo.longitude },
+  hasMap: site.maps.directionsUrl,
+  sameAs: [site.socials.facebook, site.socials.instagram],
+};
+---
+
+<title>{fullTitle}</title>
+<meta name="description" content={metaDescription} />
+<link rel="canonical" href={canonical} />
+{noindex && <meta name="robots" content="noindex, follow" />}
+
+<meta property="og:type" content={type} />
+<meta property="og:locale" content="pl_PL" />
+<meta property="og:site_name" content={site.name} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={metaDescription} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={ogImageUrl} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+{publishedTime && <meta property="article:published_time" content={publishedTime.toISOString()} />}
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={fullTitle} />
+<meta name="twitter:description" content={metaDescription} />
+<meta name="twitter:image" content={ogImageUrl} />
+
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+<link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="theme-color" content="#0b0f0d" />
+
+<script type="application/ld+json" set:html={JSON.stringify(localBusiness)} />
